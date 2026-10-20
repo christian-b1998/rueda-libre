@@ -12,3 +12,21 @@ Código de estado al usar /promociones.html: 404 Not Found. El servidor no encue
 - CSS: se encarga de los estilos y la apariencia visual. Por ejemplo, cambiar los colores, el tamaño de las imágenes y la distribución de las bicicletas en tarjetas.
 - JavaScript: permite agregar interactividad y funcionalidad. Por ejemplo, hacer que al pulsar el botón «Ver detalles» aparezca información adicional sobre una bicicleta.
 En resumen: HTML define qué hay, CSS define cómo se ve y JavaScript define cómo se comporta.
+
+TABLA DE RUTAS RELATIVAS
+
+Archivo de origen → Destino → Ruta escrita
+
+index.html → Inicio → index.html
+index.html → Tarifas → paginas/tarifas.html
+index.html → Reservas → paginas/reservas.html
+index.html → Recorridos guiados → paginas/tarifas.html#recorridos
+
+paginas/tarifas.html → Inicio → ../index.html
+paginas/tarifas.html → Tarifas → tarifas.html
+paginas/tarifas.html → Reservas → reservas.html
+paginas/tarifas.html → Tabla de recorridos → #recorridos
+
+paginas/reservas.html → Inicio → ../index.html
+paginas/reservas.html → Tarifas → tarifas.html
+paginas/reservas.html → Reservas → reservas.html
