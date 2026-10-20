@@ -1,0 +1,14 @@
+URL completa: http://127.0.0.1:5500/index.html
+Protocolo: http
+Host: 127.0.0.1
+Puerto: 5500
+Ruta: index.html
+Método de la petición: GET
+Código de estado: 304 Not Modified
+
+Código de estado al usar /promociones.html: 404 Not Found. El servidor no encuentra el archivo solicitado porque la ruta no existe.
+
+- HTML: se encarga de la estructura y el contenido del sitio. Por ejemplo, crear una sección que muestre las bicicletas disponibles para la venta.
+- CSS: se encarga de los estilos y la apariencia visual. Por ejemplo, cambiar los colores, el tamaño de las imágenes y la distribución de las bicicletas en tarjetas.
+- JavaScript: permite agregar interactividad y funcionalidad. Por ejemplo, hacer que al pulsar el botón «Ver detalles» aparezca información adicional sobre una bicicleta.
+En resumen: HTML define qué hay, CSS define cómo se ve y JavaScript define cómo se comporta.
