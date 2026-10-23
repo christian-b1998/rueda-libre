@@ -89,3 +89,117 @@ Usé una lista desplegable porque hay cuatro opciones (ninguno y tres rutas con 
 
 3. Políticas de alquiler → <input type="checkbox">
 Usé una casilla porque la aceptación es una decisión de sí o no: o la acepta o no la acepta. El checkbox deja claro que la persona tiene que marcarlo ella misma y, con required, no se puede enviar la reserva sin aceptar.
+
+PRUEBAS FORMULARIO.
+
+#1
+Campo: email
+Dato de prueba: paco
+Resultado esperado: no permitir enviar el formulario porque no es un correo 
+Resultado obtenido: no permite enviar el formulario hasta que se ponga un correo
+
+#2
+Campo: documento
+Dato de prueba: abc123456
+Resultado esperado: no permitir enviar porque tiene letras
+Resultado obtenido: no permite enviar el formulario y muestra el mensaje "Solo números, entre 6 y 10 dígitos."
+
+#3
+Campo: documento
+Dato de prueba: 12345
+Resultado esperado: no permitir enviar porque tiene menos de 6 dígitos
+Resultado obtenido: no permite enviar el formulario y muestra el mensaje del formato esperado
+
+#4
+Campo: celular
+Dato de prueba: 3001234567
+Resultado esperado: aceptarlo porque tiene 10 dígitos y empieza por 3
+Resultado obtenido: el campo es válido y el formulario se puede enviar
+
+#5
+Campo: celular
+Dato de prueba: 1234567890
+Resultado esperado: rechazarlo porque no empieza por 3
+Resultado obtenido: no permite enviar el formulario y muestra el mensaje del formato esperado
+
+#6
+Campo: celular
+Dato de prueba: 300123
+Resultado esperado: rechazarlo porque tiene solo 6 dígitos
+Resultado obtenido: no permite enviar el formulario y muestra el mensaje del formato esperado
+
+#7
+Campo: fecha del alquiler
+Dato de prueba: 31/10/2026
+Resultado esperado: rechazarla porque es anterior al 1 de noviembre de 2026
+Resultado obtenido: no permite enviar el formulario porque la fecha está fuera del rango
+
+#8
+Campo: fecha del alquiler
+Dato de prueba: 01/01/2027
+Resultado esperado: rechazarla porque es posterior al 31 de diciembre de 2026
+Resultado obtenido: no permite enviar el formulario porque la fecha está fuera del rango
+
+#9
+Campo: cantidad de bicicletas
+Dato de prueba: 0
+Resultado esperado: rechazarlo porque el mínimo es 1
+Resultado obtenido: no permite enviar el formulario porque el valor es menor al mínimo
+
+#10
+Campo: cantidad de bicicletas
+Dato de prueba: 7
+Resultado esperado: rechazarlo porque el máximo es 6
+Resultado obtenido: no permite enviar el formulario porque el valor es mayor al máximo
+
+#11
+Campo: tipo de plan
+Dato de prueba: dejar "Selecciona un plan" sin cambiar
+Resultado esperado: no permitir enviar porque el plan es obligatorio
+Resultado obtenido: no permite enviar el formulario y pide seleccionar un plan
+
+#12
+Campo: políticas de alquiler
+Dato de prueba: casilla sin marcar
+Resultado esperado: no permitir enviar porque es obligatorio aceptarlas
+Resultado obtenido: no permite enviar el formulario y pide marcar la casilla
+
+#13
+Campo: nombre completo
+Dato de prueba: Al
+Resultado esperado: no permitir enviar porque tiene menos de 3 caracteres
+Resultado obtenido: no permite enviar el formulario por el minlength
+
+#14
+Campo: comentarios
+Dato de prueba: escribir más de 300 caracteres
+Resultado esperado: no permitir superar los 300 caracteres
+Resultado obtenido: el navegador no deja escribir más de 300 caracteres
+
+RECORRIDO CON EL TECLADO
+
+Orden obtenido con la tecla Tab:
+1. Nombre completo
+2. Número de documento
+3. Correo electrónico
+4. Celular
+5. Fecha del alquiler
+6. Tipo de bicicleta (radios)
+7. Tipo de plan
+8. Cantidad de bicicletas
+9. Recorrido guiado
+10. Comentarios
+11. Aceptación de las políticas
+12. Botón "Enviar Reserva"
+
+El orden es lógico y coincide con el orden visual del formulario. No fue necesario corregir nada.
+
+Observaciones por tipo de control:
+- Radios (tipo de bicicleta): Tab solo entra al primer radio del grupo, porque todo el grupo cuenta como una sola parada. Las opciones se cambian con las flechas del teclado, y probé que funcionan.
+- Listas desplegables (plan y recorrido): se cambia la opción con las flechas.
+- Casilla de políticas: se marca y desmarca con la barra espaciadora.
+- Botón: Enter envía el formulario, y si falta algo o hay un dato incorrecto, el navegador lo bloquea y señala el campo.
+
+LIMITACIÓN CONOCIDA
+
+El campo "Nombre completo" acepta tres espacios en blanco ("   ") como si fueran un nombre válido, porque minlength="3" cuenta los espacios como caracteres y required solo revisa que el campo no esté vacío. Con validación nativa de HTML no hay una forma simple de evitarlo.
