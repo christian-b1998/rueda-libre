@@ -2,13 +2,13 @@ URL completa: http://127.0.0.1:5500/index.html
 Protocolo: http
 Host: 127.0.0.1
 Puerto: 5500
-Ruta: index.html
+Ruta: /index.html
 Método de la petición: GET
-Código de estado: 304 Not Modified
+Código de estado: 200 OK
 
 Código de estado al usar /promociones.html: 404 Not Found. El servidor no encuentra el archivo solicitado porque la ruta no existe.
 
-- HTML: se encarga de la estructura y el contenido del sitio. Por ejemplo, crear una sección que muestre las bicicletas disponibles para la venta.
+- HTML: se encarga de la estructura y el contenido del sitio. Por ejemplo, crear una sección que muestre las bicicletas disponibles para alquiler.
 - CSS: se encarga de los estilos y la apariencia visual. Por ejemplo, cambiar los colores, el tamaño de las imágenes y la distribución de las bicicletas en tarjetas.
 - JavaScript: permite agregar interactividad y funcionalidad. Por ejemplo, hacer que al pulsar el botón «Ver detalles» aparezca información adicional sobre una bicicleta.
 En resumen: HTML define qué hay, CSS define cómo se ve y JavaScript define cómo se comporta.
@@ -21,11 +21,14 @@ index.html → Inicio → index.html
 index.html → Tarifas → paginas/tarifas.html
 index.html → Reservas → paginas/reservas.html
 index.html → Recorridos guiados → paginas/tarifas.html#recorridos
+index.html → Ver tarifas → paginas/tarifas.html
+index.html → Reservar ahora → paginas/reservas.html
 
+paginas/tarifas.html → Reservar ahora → reservas.html
+paginas/tarifas.html → Volver al inicio → ../index.html
 paginas/tarifas.html → Inicio → ../index.html
 paginas/tarifas.html → Tarifas → tarifas.html
 paginas/tarifas.html → Reservas → reservas.html
-paginas/tarifas.html → Tabla de recorridos → #recorridos
 
 paginas/reservas.html → Inicio → ../index.html
 paginas/reservas.html → Tarifas → tarifas.html
