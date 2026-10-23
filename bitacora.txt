@@ -78,3 +78,14 @@ main
 footer
 
 Justificación de div y span: no se usó ninguno, porque todos los bloques tenían una etiqueta semántica equivalente.
+
+JUSTIFICACIÓN DE CONTROLES DEL FORMULARIO
+
+1. Correo electrónico → <input type="email">
+Usé type="email" en lugar de type="text" porque el navegador comprueba que lo escrito tenga forma de correo (algo@dominio) y no deja enviar el formulario si no es así. En celulares muestra además un teclado con la @ a la mano. Así se evitan correos mal escritos, que es justo el tipo de error que hoy ocurre por WhatsApp.
+
+2. Recorrido guiado → <select> con <option>
+Usé una lista desplegable porque hay cuatro opciones (ninguno y tres rutas con nombres largos) y el cliente solo puede elegir una. Con botones de radio el formulario se alargaría mucho; con el select ocupa una sola línea y las opciones quedan limitadas a las que Rueda Libre realmente ofrece.
+
+3. Políticas de alquiler → <input type="checkbox">
+Usé una casilla porque la aceptación es una decisión de sí o no: o la acepta o no la acepta. El checkbox deja claro que la persona tiene que marcarlo ella misma y, con required, no se puede enviar la reserva sin aceptar.
