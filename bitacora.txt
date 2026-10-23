@@ -70,10 +70,15 @@ footer
 
 paginas/reservas.html
 header
+  p con el nombre del negocio
   nav
   h1 Reserva tu bicicleta
 main
   p y correo de contacto
+  section Formulario de reserva
+    fieldset Tus datos
+    fieldset Tu alquiler (con un fieldset anidado para el tipo de bicicleta)
+    fieldset Confirmación
   aside Horario de atención (lista de definiciones)
 footer
 
@@ -203,3 +208,56 @@ Observaciones por tipo de control:
 LIMITACIÓN CONOCIDA
 
 El campo "Nombre completo" acepta tres espacios en blanco ("   ") como si fueran un nombre válido, porque minlength="3" cuenta los espacios como caracteres y required solo revisa que el campo no esté vacío. Con validación nativa de HTML no hay una forma simple de evitarlo.
+
+AUDITORÍA DE ACCESIBILIDAD
+
+Hallazgo 1: el alt de la portada ("Vista de portada de Rueda Libre") no describía la imagen ni leía el texto que contiene.
+Corrección: se reescribió para describir la escena e incluir el texto de la imagen.
+
+Hallazgo 2: el alt de la imagen de la ruta era genérico.
+Corrección: ahora describe a los ciclistas, la carretera y el paisaje.
+
+Hallazgo 3: el alt de la bicicleta ("Bicicleta disponible para alquiler") no decía cómo era la bicicleta.
+Corrección: ahora describe su color, la alforja y el fondo.
+
+Hallazgo 4: el enlace al mapa abre otra pestaña sin avisar.
+Corrección: el texto del enlace ahora dice "(se abre en otra pestaña)".
+
+Hallazgo 5: el enlace "contáctanos" no se entendía fuera de contexto.
+Corrección: ahora dice "mira cómo contactarnos".
+
+Hallazgo 6: no se indicaba cuáles campos del formulario son obligatorios y el formato de documento y celular solo estaba en el title.
+Corrección: se agregó una nota visible antes del formulario y el formato dentro de los labels de documento y celular.
+
+Verificado sin cambios: lang="es" en las tres páginas, un solo h1 por página sin saltos de nivel, títulos distintos y labels en todos los controles.
+
+RECORRIDO CON EL TECLADO EN TODO EL SITIO
+
+index.html: Inicio, Tarifas y rutas, Reservas, mira cómo contactarnos, Ver precios de recorridos guiados, Reservar ahora, Ver tarifas, correo, mapa, correo del pie. Orden lógico: menú, contenido y pie.
+tarifas.html: Inicio, Tarifas y rutas, Reservas, Reservar ahora, Volver al inicio, correo del pie. Orden lógico.
+reservas.html: menú, correo de contacto, campos del formulario en orden, botón y correo del pie. Orden lógico.
+
+CONTRASTE DE LA PALETA (WCAG: 4.5:1 texto normal, 3:1 texto grande)
+
+Blanco sobre Verde Ruta: 5.31:1 → apta para texto normal
+Blanco sobre Naranja Pedal: 2.22:1 → no apta
+Azul Noche sobre Naranja Pedal: 7.2:1 → apta para texto normal
+Azul Noche sobre Crema: 14.82:1 → apta para texto normal
+Gris Asfalto sobre Crema: 5.56:1 → apta para texto normal
+Verde Ruta sobre Crema: 4.93:1 → apta para texto normal
+Naranja Pedal sobre Crema: 2.06:1 → no apta
+Blanco sobre Azul Noche: 15.97:1 → apta para texto normal
+
+Valores comprobados con WebAIM Contrast Checker.
+
+MAPA DE USO DE COLOR
+- Fondo general: Crema (#FAF6EF).
+- Texto principal y títulos: Azul Noche (#14213D), con una relación de 14.82:1 sobre Crema (#FAF6EF).
+- Texto secundario: Gris Asfalto (#5B6470), con una relación de 5.56:1 sobre Crema (#FAF6EF).
+- Enlaces: Verde Ruta (#1E7A4F) sobre Crema (#FAF6EF), con una relación de 4.93:1, subrayados para no depender solo del color.
+- Botones principales: fondo Verde Ruta (#1E7A4F) con texto blanco (#FFFFFF), con una relación de 5.31:1.
+- Botones secundarios y destacados: fondo Naranja Pedal (#F39A2B) con texto Azul Noche (#14213D), con una relación de 7.2:1, nunca texto blanco (#FFFFFF).
+- Encabezado: fondo Azul Noche (#14213D) con texto blanco (#FFFFFF), con una relación de 15.97:1.
+- Naranja Pedal (#F39A2B) nunca se usa como color de texto sobre Crema (#FAF6EF) ni con texto blanco (#FFFFFF) encima.
+
+SITIO PUBLICADO (v0.2): https://christian-b1998.github.io/rueda-libre/

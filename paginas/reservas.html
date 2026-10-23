@@ -34,17 +34,20 @@
 
         <section>
             <h2>Formulario de reserva</h2>
+            <p>Todos los campos son obligatorios, excepto los comentarios.</p>
             <form action="/enviar" method="post">
                 <fieldset>
                     <legend>Tus datos</legend>
                     <label for="nombre">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" minlength="3" required>
-                    <label for="documento">Número de documento</label>
-                    <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}" title="Solo números, entre 6 y 10 dígitos." required>
+                    <label for="documento">Número de documento (solo números, 6 a 10 dígitos)</label>
+                    <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}"
+                        title="Solo números, entre 6 y 10 dígitos." required>
                     <label for="correo">Correo electrónico</label>
                     <input type="email" id="correo" name="correo" required>
-                    <label for="telefono">Celular</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" maxlength="10" title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567" required>
+                    <label for="telefono">Celular (10 dígitos, empieza por 3)</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" maxlength="10"
+                        title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567" required>
                 </fieldset>
                 <fieldset>
                     <legend>Tu alquiler</legend>
@@ -78,7 +81,7 @@
                 </fieldset>
                 <fieldset>
                     <legend>Confirmación</legend>
-                    <label for="comentarios">Comentarios</label>
+                    <label for="comentarios">Comentarios (opcional)</label>
                     <textarea id="comentarios" name="comentarios" maxlength="300"></textarea>
                     <label for="politicas"><input type="checkbox" id="politicas" name="politicas" value="aceptado"
                             required>Aceptación de las políticas de alquiler</label>
