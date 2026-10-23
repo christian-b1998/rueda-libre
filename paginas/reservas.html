@@ -38,35 +38,36 @@
                 <fieldset>
                     <legend>Tus datos</legend>
                     <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="nombre" name="nombre" minlength="3" required>
                     <label for="documento">Número de documento</label>
-                    <input type="text" id="documento" name="documento" required>
+                    <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}" title="Solo números, entre 6 y 10 dígitos." required>
                     <label for="correo">Correo electrónico</label>
                     <input type="email" id="correo" name="correo" required>
                     <label for="telefono">Celular</label>
-                    <input type="tel" id="telefono" name="telefono" required>
+                    <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" maxlength="10" title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567" required>
                 </fieldset>
                 <fieldset>
                     <legend>Tu alquiler</legend>
                     <label for="alquiler">Fecha del alquiler</label>
-                    <input type="date" id="alquiler" name="alquiler" required>
+                    <input type="date" id="alquiler" name="alquiler" min="2026-11-01" max="2026-12-31" required>
                     <fieldset>
                         <legend>Tipo de bicicleta</legend>
                         <input type="radio" id="urbana" name="tipoBicicleta" value="urbana" required>
                         <label for="urbana">Urbana</label>
-                        <input type="radio" id="montana" name="tipoBicicleta" value="montana">
+                        <input type="radio" id="montana" name="tipoBicicleta" value="montana" required>
                         <label for="montana">Montaña</label>
-                        <input type="radio" id="electrica" name="tipoBicicleta" value="electrica">
+                        <input type="radio" id="electrica" name="tipoBicicleta" value="electrica" required>
                         <label for="electrica">Eléctrica</label>
                     </fieldset>
                     <label for="plan">Tipo de plan</label>
                     <select id="plan" name="plan" required>
+                        <option value="">Selecciona un plan</option>
                         <option value="hora">1 hora</option>
                         <option value="mediaDia">Medio día (4h)</option>
                         <option value="Dia">Día completo</option>
                     </select>
                     <label for="biciCant">Cantidad de bicicletas</label>
-                    <input type="number" id="biciCant" name="biciCant" required>
+                    <input type="number" id="biciCant" name="biciCant" min="1" max="6" required>
                     <label for="recorrido">Recorrido guiado</label>
                     <select id="recorrido" name="recorrido" required>
                         <option value="ninguno">Ninguno</option>
@@ -78,7 +79,7 @@
                 <fieldset>
                     <legend>Confirmación</legend>
                     <label for="comentarios">Comentarios</label>
-                    <textarea id="comentarios" name="comentarios"></textarea>
+                    <textarea id="comentarios" name="comentarios" maxlength="300"></textarea>
                     <label for="politicas"><input type="checkbox" id="politicas" name="politicas" value="aceptado"
                             required>Aceptación de las políticas de alquiler</label>
                 </fieldset>
