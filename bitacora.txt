@@ -33,3 +33,48 @@ paginas/tarifas.html → Reservas → reservas.html
 paginas/reservas.html → Inicio → ../index.html
 paginas/reservas.html → Tarifas → tarifas.html
 paginas/reservas.html → Reservas → reservas.html
+
+ESQUEMA DE REGIONES DE CADA PÁGINA
+
+index.html
+header
+  nav (Inicio, Tarifas y rutas, Reservas)
+  h1 Rueda Libre
+main
+  p de bienvenida (con enlace a #encuentranos)
+  section ¿Quiénes somos?
+  section Nuestros servicios
+    article Alquiler de bicicletas urbanas
+    article Alquiler de bicicletas de montaña
+    article Recorridos guiados en bicicleta
+    article Taller básico
+  section ¿Cómo alquilar?
+  section Beneficios del servicio
+  section Encuéntranos
+footer (nombre, correo, año)
+(Sin aside: esta página no tiene contenido complementario)
+
+paginas/tarifas.html
+header
+  h1 Tarifas y rutas
+  nav
+  logo
+main
+  section Tarifas de alquiler (tabla)
+  section Recorridos guiados (tabla)
+  p Reservar ahora
+  p notas de casco/candado y horarios de salida
+  aside Qué llevar (lista)
+  enlace Volver al inicio
+footer
+
+paginas/reservas.html
+header
+  nav
+  h1 Reserva tu bicicleta
+main
+  p y correo de contacto
+  aside Horario de atención (lista de definiciones)
+footer
+
+Justificación de div y span: no se usó ninguno, porque todos los bloques tenían una etiqueta semántica equivalente.
