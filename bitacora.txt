@@ -261,3 +261,9 @@ MAPA DE USO DE COLOR
 - Naranja Pedal (#F39A2B) nunca se usa como color de texto sobre Crema (#FAF6EF) ni con texto blanco (#FFFFFF) encima.
 
 SITIO PUBLICADO (v0.2): https://christian-b1998.github.io/rueda-libre/
+
+COMPROBACIÓN DE HERENCIA (DevTools)
+
+Propiedad que se hereda: font-family y color (en Styles aparecen en "Inherited from body"; en Computed el párrafo muestra el color rgb(20, 33, 61), el mismo que tiene el body).
+Propiedad que no se hereda: background-color (en Computed el párrafo muestra rgba(0, 0, 0, 0), mientras que el body muestra rgb(250, 246, 239)).
+Títulos: en Computed el font-family del h1 empieza por Montserrat. Párrafos: en Computed el font-family empieza por "Open Sans".
