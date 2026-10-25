@@ -1,0 +1,27 @@
+:root {
+    --color-botonesyenlaces: #1E7A4F;
+    --color-destacadosybotonessecundarios: #F39A2B;
+    --color-titulosyencabezado: #14213D;
+    --color-fondogeneral: #FAF6EF;
+    --color-textosecundario: #5B6470;
+
+    --fuente-titulos: "Montserrat", sans-serif;
+    --fuente-texto: "Open Sans", sans-serif;
+
+    --espacio-s: 0.5rem;
+    --espacio-m: 1rem;
+    --espacio-l: 2rem;
+}
+
+/* Recordar que no puedo poner blanco sobre naranja ni naranja sobre crema porque son no aptas */
+
+body {
+    font-family: var(--fuente-texto);
+    color: var(--color-titulosyencabezado);
+    background-color: var(--color-fondogeneral);
+}
+
+h1, h2, h3, h4, h5 ,h6 {
+    font-family: var(--fuente-titulos);
+}
+
