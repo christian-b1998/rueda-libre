@@ -282,3 +282,54 @@ Con content-box: contenido 720 px + padding 16 px + 16 px + border 1 px + 1 px =
 Con border-box: contenido 654 px + padding 16 px + 16 px + border 1 px + 1 px = 688 px de ancho total.
 Qué se vio en DevTools: al desmarcar box-sizing en la regla *, el ancho total de la tarjeta pasó de 688 px a 754 px. También cambió main, cuyo contenido pasó de 688 px a 720 px porque su relleno dejó de contarse dentro del max-width, y la tarjeta se salió 34 px de su contenedor.
 Causa de la diferencia: con content-box el width solo mide el contenido, así que el relleno y el borde se suman por fuera y el elemento termina más ancho de lo declarado; con border-box el width ya incluye el relleno y el borde, y el contenido se encoge para que el total sea el ancho declarado.
+
+MINIRETO 12: RUEDA LIBRE V1.0
+
+MEDICIONES
+
+Enlace de WhatsApp (DevTools, pestaña Computed): contenido de 22 px de alto + relleno de 8 px arriba + 8 px abajo = 38 px.
+Distancia al borde inferior (bottom): 16 px.
+Espacio total que ocupa: 38 px + 16 px = 54 px = 3.375rem (54 / 16).
+
+PRUEBAS
+
+- Network: recargué las tres páginas y no apareció ningún error 404.
+- Styles: revisé las reglas de la etiqueta "Nuevo" y de WhatsApp y no hay triángulos de advertencia. Solo aparece tachado el color heredado del body, lo cual es normal porque el elemento tiene su propio color.
+- Teclado: recorrí las tres páginas con Tab y el orden es lógico.
+- Formulario: la validación nativa no deja enviar el formulario vacío.
+- Celular (320 px en DevTools): la etiqueta "Nuevo" pisaba el título de la tarjeta. Con top y right en -1 (sin unidad) no era un valor válido y la etiqueta quedó debajo del título, dentro de la imagen. Con -1rem queda en la esquina de la tarjeta sin tapar el título.
+- WhatsApp a 320 px: queda a la derecha y el texto del pie a la izquierda, así que no se superponen.
+
+DECISIONES
+
+- Etiqueta "Nuevo": la tarjeta tiene position: relative y la etiqueta position: absolute, con top y right en -1rem, para que quede anclada a la esquina sin desplazar el contenido.
+- WhatsApp: position: fixed con bottom y right de 1rem, texto blanco sobre Verde Ruta (5.31:1) y z-index: 10 para que quede por encima del contenido.
+- Pie: padding-bottom de 3.375rem, que es lo que ocupa el enlace de WhatsApp, para que no tape el contenido al llegar al final de la página.
+- Encabezado, menú y pie con la misma estructura en las tres páginas.
+- La clase portada tenía min-height de 60vh y el contenido quedaba muy abajo, así que la bajé a 20vh. Después eliminé la regla porque el encabezado se ve igual sin ella.
+- styles.css organizado en secciones comentadas: Variables, Base, Navegación, Componentes y Formularios.
+- El hover del menú quedó separado del hover de los botones. Los botones .boton-cta y #submitForm comparten fondo, color y peso de fuente; lo que cambia en cada uno (relleno, borde y margen) quedó en reglas aparte.
+
+URL de GitHub Pages: https://christian-b1998.github.io/rueda-libre/
+
+CIERRE DE LA SEMANA
+
+Qué construí en cada MiniReto:
+1. Kilómetro 0: el repositorio, la estructura de carpetas, el index.html base y la bitácora.
+2. La vitrina de Rueda Libre: la página de inicio con contenido jerarquizado, listas, imágenes y enlaces.
+3. Tarifas claras: las tablas de tarifas y recorridos, y las rutas relativas entre carpetas.
+4. Rueda Libre v0.1: la página de reservas inicial, y el menú y pie comunes para navegar entre las páginas.
+5. Estructura con significado: header, nav, main, section, article, aside y footer en las tres páginas.
+6. El formulario de reservas: fieldsets, labels y controles, con la justificación de cada tipo de control.
+7. Reservas sin errores: validación nativa con patrones y rangos, una tabla de 14 pruebas y el recorrido con teclado.
+8. Rueda Libre v0.2 en línea: auditoría de accesibilidad con 6 hallazgos, mapa de color con contraste y publicación en GitHub Pages.
+9. La identidad de Rueda Libre: hoja de estilos externa, variables, tipografías Montserrat y Open Sans, y colores de marca.
+10. Navegación con estados: :hover y :focus, clase activa y botones, y un conflicto de especificidad entre #menu a y .activo.
+11. Todo en su lugar: box-sizing border-box, relleno y márgenes en tarjetas, tablas y formulario, con la medición de 688 px contra 754 px.
+12. Rueda Libre v1.0: la etiqueta "Nuevo", el enlace fijo de WhatsApp, la consistencia de las tres páginas, el CSS organizado y la publicación.
+
+Qué mejoraría:
+- Probar el sitio en pantalla de celular desde el principio, porque el problema de la etiqueta "Nuevo" solo lo vi al simular 320 px.
+- Agrupar selectores y organizar el CSS por secciones mientras lo escribo, y no al final del reto.
+- Conectar el formulario a un destino real, porque ahora su action apunta a /enviar, que no existe en GitHub Pages.
+- Resolver la limitación del campo "Nombre completo", que acepta espacios en blanco como nombre válido.
