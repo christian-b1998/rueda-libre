@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Consulta el horario de atención y los datos de contacto para reservar tu bicicleta con Rueda Libre.">
+    <meta name="description"
+        content="Consulta el horario de atención y los datos de contacto para reservar tu bicicleta con Rueda Libre.">
     <meta name="author" content="Christian Benitez">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <title>Reservas | Rueda Libre</title>
@@ -43,21 +43,30 @@
             <form action="/enviar" method="post">
                 <fieldset>
                     <legend>Tus datos</legend>
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" minlength="3" required>
-                    <label for="documento">Número de documento (solo números, 6 a 10 dígitos)</label>
-                    <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}"
-                        title="Solo números, entre 6 y 10 dígitos." required>
-                    <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" name="correo" required>
-                    <label for="telefono">Celular (10 dígitos, empieza por 3)</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" maxlength="10"
-                        title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567" required>
+                    <div class="grupo">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" minlength="3" required>
+                    </div>
+                    <div class="grupo">
+                        <label for="documento">Número de documento (solo números, 6 a 10 dígitos)</label>
+                        <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}"
+                            title="Solo números, entre 6 y 10 dígitos." required>
+                    </div>
+                    <div class="grupo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+                    <div class="grupo"><label for="telefono">Celular (10 dígitos, empieza por 3)</label>
+                        <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" maxlength="10"
+                            title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567" required>
+                    </div>
+
                 </fieldset>
                 <fieldset>
                     <legend>Tu alquiler</legend>
-                    <label for="alquiler">Fecha del alquiler</label>
-                    <input type="date" id="alquiler" name="alquiler" min="2026-11-01" max="2026-12-31" required>
+                    <div class="grupo"><label for="alquiler">Fecha del alquiler</label>
+                        <input type="date" id="alquiler" name="alquiler" min="2026-11-01" max="2026-12-31" required>
+                    </div>
                     <fieldset>
                         <legend>Tipo de bicicleta</legend>
                         <input type="radio" id="urbana" name="tipoBicicleta" value="urbana" required>
@@ -67,27 +76,33 @@
                         <input type="radio" id="electrica" name="tipoBicicleta" value="electrica" required>
                         <label for="electrica">Eléctrica</label>
                     </fieldset>
-                    <label for="plan">Tipo de plan</label>
-                    <select id="plan" name="plan" required>
-                        <option value="">Selecciona un plan</option>
-                        <option value="hora">1 hora</option>
-                        <option value="mediaDia">Medio día (4h)</option>
-                        <option value="Dia">Día completo</option>
-                    </select>
-                    <label for="biciCant">Cantidad de bicicletas</label>
-                    <input type="number" id="biciCant" name="biciCant" min="1" max="6" required>
-                    <label for="recorrido">Recorrido guiado</label>
-                    <select id="recorrido" name="recorrido" required>
-                        <option value="ninguno">Ninguno</option>
-                        <option value="ruta1">Río y Parques</option>
-                        <option value="ruta2">Sabores de Barrio</option>
-                        <option value="ruta3">Reto Las Palmas</option>
-                    </select>
+                    <div class="grupo">
+                        <label for="plan">Tipo de plan</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Selecciona un plan</option>
+                            <option value="hora">1 hora</option>
+                            <option value="mediaDia">Medio día (4h)</option>
+                            <option value="Dia">Día completo</option>
+                        </select>
+                    </div>
+                    <div class="grupo"> <label for="biciCant">Cantidad de bicicletas</label>
+                        <input type="number" id="biciCant" name="biciCant" min="1" max="6" required>
+                    </div>
+                    <div class="grupo"><label for="recorrido">Recorrido guiado</label>
+                        <select id="recorrido" name="recorrido" required>
+                            <option value="ninguno">Ninguno</option>
+                            <option value="ruta1">Río y Parques</option>
+                            <option value="ruta2">Sabores de Barrio</option>
+                            <option value="ruta3">Reto Las Palmas</option>
+                        </select>
+                    </div>
                 </fieldset>
                 <fieldset>
                     <legend>Confirmación</legend>
-                    <label for="comentarios">Comentarios (opcional)</label>
-                    <textarea id="comentarios" name="comentarios" maxlength="300"></textarea>
+                    <div class="grupo"><label for="comentarios">Comentarios (opcional)</label>
+                        <textarea id="comentarios" name="comentarios" maxlength="300"></textarea>
+                    </div>
+
                     <label for="politicas"><input type="checkbox" id="politicas" name="politicas" value="aceptado"
                             required>Aceptación de las políticas de alquiler</label>
                 </fieldset>
