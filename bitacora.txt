@@ -267,3 +267,10 @@ COMPROBACIÓN DE HERENCIA (DevTools)
 Propiedad que se hereda: font-family y color (en Styles aparecen en "Inherited from body"; en Computed el párrafo muestra el color rgb(20, 33, 61), el mismo que tiene el body).
 Propiedad que no se hereda: background-color (en Computed el párrafo muestra rgba(0, 0, 0, 0), mientras que el body muestra rgb(250, 246, 239)).
 Títulos: en Computed el font-family del h1 empieza por Montserrat. Párrafos: en Computed el font-family empieza por "Open Sans".
+
+CONFLICTO DE ESPECIFICIDAD (MiniReto 10)
+
+Selector #menu a: especificidad (1, 0, 1). Cálculo: 1 id (#menu) + 0 clases + 1 elemento (a).
+Selector .activo: especificidad (0, 1, 0). Cálculo: 0 ids + 1 clase (.activo) + 0 elementos.
+Qué se vio en DevTools: la declaración color de la regla .activo aparece tachada, mientras que color de #menu a se aplica. La declaración font-weight de .activo no está tachada.
+Causa del problema: las dos reglas definen color para el mismo enlace, y gana la de mayor especificidad. #menu a (1, 0, 1) pesa más que .activo (0, 1, 0), porque el primer número (los ids) es 1 contra 0. Por eso el color de .activo se pierde. La negrita sí se aplica porque #menu a no define font-weight, así que no hay conflicto en esa propiedad.

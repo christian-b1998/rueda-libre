@@ -4,6 +4,7 @@
     --color-titulosyencabezado: #14213D;
     --color-fondogeneral: #FAF6EF;
     --color-textosecundario: #5B6470;
+    --color-blanco: #FFFFFF;
 
     --fuente-titulos: "Montserrat", sans-serif;
     --fuente-texto: "Open Sans", sans-serif;
@@ -25,3 +26,39 @@ h1, h2, h3, h4, h5 ,h6 {
     font-family: var(--fuente-titulos);
 }
 
+#menu a {
+    color: var(--color-textosecundario);
+}
+
+#menu .activo { 
+    color: var(--color-botonesyenlaces); font-weight: 600; 
+}
+
+#menu a:hover {
+    background-color: var(--color-destacadosybotonessecundarios);
+    color: var(--color-titulosyencabezado);
+}
+
+#menu a:focus {
+    color: var(--color-titulosyencabezado);
+    outline: 3px solid var(--color-botonesyenlaces);
+}
+
+.boton-cta {
+    background-color: var(--color-botonesyenlaces);
+    color: var(--color-blanco);
+    font-weight: 600;
+}
+
+.boton-cta:hover {
+    background-color: var(--color-destacadosybotonessecundarios);
+    color: var(--color-titulosyencabezado);
+}
+
+.boton-cta:focus {
+    outline: 3px solid var(--color-titulosyencabezado);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 3px solid var(--color-botonesyenlaces);
+}
