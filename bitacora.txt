@@ -347,3 +347,9 @@ Al estrechar la ventana (DevTools):
 - A unos 341 px el enlace «Reservas» baja a una segunda línea en lugar de desbordarse (flex-wrap en #menu).
 - A unos 234 px «Tarifas y rutas» también baja a su propia línea.
 - A 320 px: el encabezado queda en 3 filas (el logo con el nombre, luego «Inicio» y «Tarifas y rutas», luego «Reservas») y el footer en 3 filas, con los tres bloques uno encima del otro.
+
+NUESTRA FLOTA CON GRID
+
+- A 1280 px la cuadrícula muestra 2 columnas.
+- A 900 px también muestra 2 columnas: main llega a su ancho máximo (45rem) y no cabe una tercera columna.
+- A 500 px muestra 1 columna.

@@ -194,6 +194,23 @@ thead th {
     color: var(--color-titulosyencabezado);
 }
 
+.articulos-flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--espacio-m);
+}
+
+.articulos-flota article {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.articulos-flota .boton-cta {
+    text-align: center;
+}
+
 /* Formularios */
 
 fieldset {
