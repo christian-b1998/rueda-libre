@@ -16,17 +16,19 @@
 
 <body>
     <header class="portada">
-        <nav id="navegacion-principal">
-            <ul id="menu">
-                <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
-                <li><a href="paginas/reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
-
-        <h1>Rueda Libre</h1>
-
-        <img src="img/logo.png" alt="Logo de Rueda Libre" width="100">
+        <div class="barra">
+            <div class="marca">
+                <img src="img/logo.png" alt="Logo de Rueda Libre" width="50">
+                <h1>Rueda Libre</h1>
+            </div>
+            <nav id="navegacion-principal">
+                <ul id="menu">
+                    <li><a href="index.html" class="activo">Inicio</a></li>
+                    <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
+                    <li><a href="paginas/reservas.html">Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -126,13 +128,29 @@
     </main>
 
     <footer>
-        <p>Rueda Libre</p>
-        <p>
-            <a href="mailto:hola@ruedalibre.example">
-                hola@ruedalibre.example
-            </a>
-        </p>
-        <p>&copy; 2026 Rueda Libre</p>
+        <section>
+            <p>Rueda Libre</p>
+            <p>&copy; 2026 Rueda Libre</p>
+        </section>
+        <section>
+            <h3>Contacto</h3>
+            <p>
+                <a href="mailto:hola@ruedalibre.example">
+                    hola@ruedalibre.example
+                </a>
+            </p>
+        </section>
+        <section>
+            <aside>
+                <h3>Horario de atención</h3>
+                <dl>
+                    <dt>Lunes a viernes</dt>
+                    <dd>de 7:00 a. m. a 7:00 p. m.</dd>
+                    <dt>Sábados, domingos y festivos</dt>
+                    <dd>de 6:00 a. m. a 2:00 p. m.</dd>
+                </dl>
+            </aside>
+        </section>
     </footer>
 </body>
 

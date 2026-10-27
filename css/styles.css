@@ -45,6 +45,15 @@ main {
 
 footer {
     padding-bottom: 3.375rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: var(--espacio-m);
+    align-items: flex-start;
+}
+
+footer h3, footer p {
+    margin-top: 0;
 }
 
 /* Navegación */
@@ -55,13 +64,31 @@ footer {
     padding: var(--espacio-s) var(--espacio-m);
 }
 
-#menu {
-    margin: 0;
-    padding: 0;
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espacio-m);
 }
 
-#menu li {
-    display: inline-block;
+.marca {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-s);
+}
+
+.marca h1 {
+    margin: 0;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-s);
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #menu .activo {
@@ -81,7 +108,8 @@ footer {
 
 /* Componentes */
 
-.boton-cta, #submitForm {
+.boton-cta,
+#submitForm {
     background-color: var(--color-botonesyenlaces);
     color: var(--color-blanco);
     font-weight: 600;
@@ -98,7 +126,8 @@ footer {
     margin-top: var(--espacio-m);
 }
 
-.boton-cta:focus, #submitForm:focus {
+.boton-cta:focus,
+#submitForm:focus {
     outline: 3px solid var(--color-titulosyencabezado);
 }
 
@@ -158,7 +187,9 @@ thead th {
     outline: 3px solid var(--color-titulosyencabezado);
 }
 
-.boton-cta:hover, .whatsapp:hover, #submitForm:hover {
+.boton-cta:hover,
+.whatsapp:hover,
+#submitForm:hover {
     background-color: var(--color-destacadosybotonessecundarios);
     color: var(--color-titulosyencabezado);
 }
