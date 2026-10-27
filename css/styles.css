@@ -38,9 +38,22 @@ h3 {
 }
 
 main {
-    max-width: 45rem;
+    max-width: 60rem;
     margin: 0 auto;
     padding: var(--espacio-m);
+}
+
+.portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-l);
+    align-items: center;
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 footer {
@@ -52,7 +65,8 @@ footer {
     align-items: flex-start;
 }
 
-footer h3, footer p {
+footer h3,
+footer p {
     margin-top: 0;
 }
 
@@ -211,6 +225,35 @@ thead th {
     text-align: center;
 }
 
+.nuestras-rutas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--espacio-m);
+}
+
+.nuestras-rutas article {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.galeria-rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-m);
+}
+
+.galeria-rutas article {
+    margin-bottom: 0;
+}
+
+.reservas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--espacio-l);
+}
+
 /* Formularios */
 
 fieldset {
@@ -237,4 +280,11 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: 3px solid var(--color-botonesyenlaces);
+}
+
+.fila-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-m);
+    align-items: end
 }

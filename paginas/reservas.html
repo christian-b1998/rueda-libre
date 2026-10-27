@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="portada">
+    <header>
         <div class="barra">
             <div class="marca">
                 <img src="../img/logo.png" alt="Logo de Rueda Libre" width="50">
@@ -34,96 +34,97 @@
     </header>
 
     <main>
-        <p>Para consultar la disponibilidad y realizar tu reserva, escríbenos:</p>
-        <p>
-            Correo:
-            <a href="mailto:hola@ruedalibre.example">
-                hola@ruedalibre.example
-            </a>
-        </p>
-
-        <section>
-            <h2>Formulario de reserva</h2>
-            <p>Todos los campos son obligatorios, excepto los comentarios.</p>
-            <form action="/enviar" method="post">
-                <fieldset>
-                    <legend>Tus datos</legend>
-                    <div class="grupo">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" minlength="3" required>
-                    </div>
-                    <div class="grupo">
-                        <label for="documento">Número de documento (solo números, 6 a 10 dígitos)</label>
-                        <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}"
-                            title="Solo números, entre 6 y 10 dígitos." required>
-                    </div>
-                    <div class="grupo">
-                        <label for="correo">Correo electrónico</label>
-                        <input type="email" id="correo" name="correo" required>
-                    </div>
-                    <div class="grupo"><label for="telefono">Celular (10 dígitos, empieza por 3)</label>
-                        <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" maxlength="10"
-                            title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567" required>
-                    </div>
-
-                </fieldset>
-                <fieldset>
-                    <legend>Tu alquiler</legend>
-                    <div class="grupo"><label for="alquiler">Fecha del alquiler</label>
-                        <input type="date" id="alquiler" name="alquiler" min="2026-11-01" max="2026-12-31" required>
-                    </div>
+        <div class="reservas">
+            <section>
+                <h2>Formulario de reserva</h2>
+                <p>Todos los campos son obligatorios, excepto los comentarios.</p>
+                <form action="/enviar" method="post">
                     <fieldset>
-                        <legend>Tipo de bicicleta</legend>
-                        <input type="radio" id="urbana" name="tipoBicicleta" value="urbana" required>
-                        <label for="urbana">Urbana</label>
-                        <input type="radio" id="montana" name="tipoBicicleta" value="montana" required>
-                        <label for="montana">Montaña</label>
-                        <input type="radio" id="electrica" name="tipoBicicleta" value="electrica" required>
-                        <label for="electrica">Eléctrica</label>
+                        <legend>Tus datos</legend>
+                        <div class="grupo">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" minlength="3" required>
+                        </div>
+                        <div class="fila-campos">
+                            <div class="grupo">
+                                <label for="documento">Número de documento (solo números, 6 a 10 dígitos)</label>
+                                <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}"
+                                    title="Solo números, entre 6 y 10 dígitos." required>
+                            </div>
+                            <div class="grupo"><label for="telefono">Celular (10 dígitos, empieza por 3)</label>
+                                <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" maxlength="10"
+                                    title="10 dígitos y debe empezar por 3. Ejemplo: 3001234567" required>
+                            </div>
+                        </div>
+                        <div class="grupo">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" name="correo" required>
+                        </div>
                     </fieldset>
-                    <div class="grupo">
-                        <label for="plan">Tipo de plan</label>
-                        <select id="plan" name="plan" required>
-                            <option value="">Selecciona un plan</option>
-                            <option value="hora">1 hora</option>
-                            <option value="mediaDia">Medio día (4h)</option>
-                            <option value="Dia">Día completo</option>
-                        </select>
-                    </div>
-                    <div class="grupo"> <label for="biciCant">Cantidad de bicicletas</label>
-                        <input type="number" id="biciCant" name="biciCant" min="1" max="6" required>
-                    </div>
-                    <div class="grupo"><label for="recorrido">Recorrido guiado</label>
-                        <select id="recorrido" name="recorrido" required>
-                            <option value="ninguno">Ninguno</option>
-                            <option value="ruta1">Río y Parques</option>
-                            <option value="ruta2">Sabores de Barrio</option>
-                            <option value="ruta3">Reto Las Palmas</option>
-                        </select>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Confirmación</legend>
-                    <div class="grupo"><label for="comentarios">Comentarios (opcional)</label>
-                        <textarea id="comentarios" name="comentarios" maxlength="300"></textarea>
-                    </div>
+                    <fieldset>
+                        <legend>Tu alquiler</legend>
+                        <div class="grupo"><label for="alquiler">Fecha del alquiler</label>
+                            <input type="date" id="alquiler" name="alquiler" min="2026-11-01" max="2026-12-31" required>
+                        </div>
+                        <fieldset>
+                            <legend>Tipo de bicicleta</legend>
+                            <input type="radio" id="urbana" name="tipoBicicleta" value="urbana" required>
+                            <label for="urbana">Urbana</label>
+                            <input type="radio" id="montana" name="tipoBicicleta" value="montana" required>
+                            <label for="montana">Montaña</label>
+                            <input type="radio" id="electrica" name="tipoBicicleta" value="electrica" required>
+                            <label for="electrica">Eléctrica</label>
+                        </fieldset>
+                        <div class="grupo">
+                            <label for="plan">Tipo de plan</label>
+                            <select id="plan" name="plan" required>
+                                <option value="">Selecciona un plan</option>
+                                <option value="hora">1 hora</option>
+                                <option value="mediaDia">Medio día (4h)</option>
+                                <option value="Dia">Día completo</option>
+                            </select>
+                        </div>
+                        <div class="grupo"> <label for="biciCant">Cantidad de bicicletas</label>
+                            <input type="number" id="biciCant" name="biciCant" min="1" max="6" required>
+                        </div>
+                        <div class="grupo"><label for="recorrido">Recorrido guiado</label>
+                            <select id="recorrido" name="recorrido" required>
+                                <option value="ninguno">Ninguno</option>
+                                <option value="ruta1">Río y Parques</option>
+                                <option value="ruta2">Sabores de Barrio</option>
+                                <option value="ruta3">Reto Las Palmas</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Confirmación</legend>
+                        <div class="grupo"><label for="comentarios">Comentarios (opcional)</label>
+                            <textarea id="comentarios" name="comentarios" maxlength="300"></textarea>
+                        </div>
 
-                    <label for="politicas"><input type="checkbox" id="politicas" name="politicas" value="aceptado"
-                            required>Aceptación de las políticas de alquiler</label>
-                </fieldset>
-                <button type="submit" id="submitForm" name="submitForm">Enviar Reserva</button>
-            </form>
-        </section>
-
-        <aside>
-            <h2>Horario de atención</h2>
-            <dl>
-                <dt>Lunes a viernes</dt>
-                <dd>de 7:00 a. m. a 7:00 p. m.</dd>
-                <dt>Sábados, domingos y festivos</dt>
-                <dd>de 6:00 a. m. a 2:00 p. m.</dd>
-            </dl>
-        </aside>
+                        <label for="politicas"><input type="checkbox" id="politicas" name="politicas" value="aceptado"
+                                required>Aceptación de las políticas de alquiler</label>
+                    </fieldset>
+                    <button type="submit" id="submitForm" name="submitForm">Enviar Reserva</button>
+                </form>
+            </section>
+            <aside>
+                <p>Para consultar la disponibilidad y realizar tu reserva, escríbenos:</p>
+                <p>
+                    Correo:
+                    <a href="mailto:hola@ruedalibre.example">
+                        hola@ruedalibre.example
+                    </a>
+                </p>
+                <h2>Horario de atención</h2>
+                <dl>
+                    <dt>Lunes a viernes</dt>
+                    <dd>de 7:00 a. m. a 7:00 p. m.</dd>
+                    <dt>Sábados, domingos y festivos</dt>
+                    <dd>de 6:00 a. m. a 2:00 p. m.</dd>
+                </dl>
+            </aside>
+        </div>
 
         <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="whatsapp">WhatsApp</a>
     </main>

@@ -353,3 +353,15 @@ NUESTRA FLOTA CON GRID
 - A 1280 px la cuadrícula muestra 2 columnas.
 - A 900 px también muestra 2 columnas: main llega a su ancho máximo (45rem) y no cabe una tercera columna.
 - A 500 px muestra 1 columna.
+- Después de ensanchar main a 60rem en el MiniReto 3, la flota muestra 3 columnas a 1280 px y a 900 px, porque ahora sí cabe una tercera columna; a 500 px sigue en 1 columna.
+
+LAYOUT GENERAL CON GRID Y FLEXBOX
+
+Criterio de elección: uso Flexbox cuando acomodo elementos en una sola dimensión (una fila o una columna) y el tamaño lo da el contenido; uso Grid cuando necesito que el contenedor defina las columnas (con fr) y el contenido se acomode dentro de ellas.
+
+- Portada de inicio: Grid. Las dos columnas iguales (1fr 1fr) las define el contenedor, y el texto y la foto se acomodan en ellas; align-items: center centra verticalmente el texto respecto a la foto.
+- Galería «Nuestras rutas»: Grid. repeat(3, 1fr) crea tres columnas iguales sin depender del tamaño de cada tarjeta, y si se agregan más rutas pasan a una fila nueva, es decir, la cuadrícula crece en filas y columnas.
+- Reservas: Grid. La proporción 2:1 entre el formulario y el contacto se logra directamente con 2fr 1fr; con Flexbox habría que forzar esa proporción con propiedades de crecimiento de cada elemento.
+- Fila del formulario (documento y celular): Grid. Son dos campos que deben medir lo mismo, y 1fr 1fr los deja iguales con un gap entre ellos; con Flexbox tendría que usar una propiedad de crecimiento que no he visto en el reto.
+- Encabezado: Flexbox. Es una sola fila en la que el logo con el nombre queda en un extremo y el menú en el otro (justify-content: space-between), centrados verticalmente (align-items: center); el tamaño lo da el contenido y flex-wrap permite que el menú baje cuando no cabe.
+- Pie: Flexbox. Son tres bloques en una sola fila, repartidos con justify-content: space-evenly y alineados por arriba; el tamaño de cada bloque lo da su contenido y flex-wrap los baja a otra fila cuando no caben.
