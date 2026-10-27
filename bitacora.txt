@@ -333,3 +333,17 @@ Qué mejoraría:
 - Agrupar selectores y organizar el CSS por secciones mientras lo escribo, y no al final del reto.
 - Conectar el formulario a un destino real, porque ahora su action apunta a /enviar, que no existe en GitHub Pages.
 - Resolver la limitación del campo "Nombre completo", que acepta espacios en blanco como nombre válido.
+
+ENCABEZADO Y PIE CON FLEXBOX
+
+Ventana ancha:
+- Encabezado: el logo con «Rueda Libre» quedan a la izquierda y el menú a la derecha, en la misma línea y centrados verticalmente entre sí.
+- Pie: los tres bloques (marca, contacto y horario) quedan en fila, con espacio uniforme y alineados por arriba.
+
+Al estrechar la ventana (DevTools):
+- A unos 616 px el menú completo baja debajo del logo y «Rueda Libre», porque ya no caben en la misma línea (flex-wrap en .barra).
+- A unos 612 px el bloque «Horario de atención» baja a una segunda fila en el footer, porque los tres bloques ya no caben en fila (flex-wrap en footer).
+- A unos 371 px el bloque «Contacto» también baja y los tres bloques del footer quedan uno encima del otro.
+- A unos 341 px el enlace «Reservas» baja a una segunda línea en lugar de desbordarse (flex-wrap en #menu).
+- A unos 234 px «Tarifas y rutas» también baja a su propia línea.
+- A 320 px: el encabezado queda en 3 filas (el logo con el nombre, luego «Inicio» y «Tarifas y rutas», luego «Reservas») y el footer en 3 filas, con los tres bloques uno encima del otro.
