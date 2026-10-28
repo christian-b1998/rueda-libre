@@ -365,3 +365,18 @@ Criterio de elección: uso Flexbox cuando acomodo elementos en una sola dimensi�
 - Fila del formulario (documento y celular): Grid. Son dos campos que deben medir lo mismo, y 1fr 1fr los deja iguales con un gap entre ellos; con Flexbox tendría que usar una propiedad de crecimiento que no he visto en el reto.
 - Encabezado: Flexbox. Es una sola fila en la que el logo con el nombre queda en un extremo y el menú en el otro (justify-content: space-between), centrados verticalmente (align-items: center); el tamaño lo da el contenido y flex-wrap permite que el menú baje cuando no cabe.
 - Pie: Flexbox. Son tres bloques en una sola fila, repartidos con justify-content: space-evenly y alineados por arriba; el tamaño de cada bloque lo da su contenido y flex-wrap los baja a otra fila cuando no caben.
+
+RESPONSIVE MOBILE-FIRST (v1.5)
+
+Comportamiento del encabezado y el pie:
+- Encabezado: en el celular el logo con el nombre queda arriba y el menú debajo, centrado; desde 768 px vuelve a una fila con el nombre a la izquierda y el menú a la derecha.
+- Pie: en el celular los tres bloques quedan en columna; desde 768 px pasan a una fila.
+
+Columnas de la flota (auto-fit con minmax de 15rem, sin media queries): a 360 px 1 columna, a 768 px 2 columnas y a 1280 px 3 columnas.
+
+Problemas responsive encontrados y cómo los resolví:
+1. A 360 px las tablas de tarifas obligaban a desplazarse de lado. En la versión base (móvil) reduje el relleno de las celdas y el tamaño de letra, y los devolví a su tamaño normal dentro del @media de 768 px; además reduje el padding de main en el celular para ganar espacio.
+2. En el formulario de reservas, a 360 px el círculo de cada opción de tipo de bicicleta quedaba separado de su texto (el círculo al final de una línea y la palabra en la siguiente). Agrupé cada círculo con su etiqueta en un div y puse los tres grupos en un contenedor con display: flex y flex-wrap.
+3. Los campos del formulario quedaban muy angostos en el celular por el espacio lateral acumulado (margen del body, padding de main y relleno del fieldset). Reduje el padding de main en móvil a 0.5rem y lo restauré a 1rem desde 768 px.
+4. El contenido y el botón de enviar quedaban muy pegados al pie. Agregué padding-top al footer.
+5. En el celular, documento y celular quedaban con el doble de separación que los demás campos porque se sumaban el gap de la cuadrícula y el margen de cada grupo. Moví el gap al @media de 768 px, donde sí hay dos columnas.

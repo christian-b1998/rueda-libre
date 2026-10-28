@@ -37,17 +37,20 @@ h3 {
     font-family: var(--fuente-titulos);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 main {
     max-width: 60rem;
     margin: 0 auto;
-    padding: var(--espacio-m);
+    padding: var(--espacio-s);
 }
 
 .portada {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: var(--espacio-l);
-    align-items: center;
 }
 
 .portada img {
@@ -57,17 +60,26 @@ main {
 }
 
 footer {
+    padding-top: var(--espacio-l);
     padding-bottom: 3.375rem;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--espacio-m);
-    align-items: flex-start;
 }
 
 footer h3,
 footer p {
     margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto
+}
+
+.portada {
+    display: grid;
+    gap: var(--espacio-l);
 }
 
 /* Navegación */
@@ -80,9 +92,8 @@ footer p {
 
 .barra {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: var(--espacio-m);
 }
 
@@ -98,6 +109,7 @@ footer p {
 
 #menu {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: var(--espacio-s);
     list-style: none;
@@ -167,7 +179,8 @@ table {
 
 th,
 td {
-    padding: var(--espacio-s) var(--espacio-m);
+    padding: var(--espacio-s) 0.25rem;
+    font-size: 0.75rem;
     border: 1px solid var(--color-textosecundario);
 }
 
@@ -225,22 +238,8 @@ thead th {
     text-align: center;
 }
 
-.nuestras-rutas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: var(--espacio-m);
-}
-
-.nuestras-rutas article {
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
 .galeria-rutas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: var(--espacio-m);
 }
 
@@ -250,7 +249,6 @@ thead th {
 
 .reservas {
     display: grid;
-    grid-template-columns: 2fr 1fr;
     gap: var(--espacio-l);
 }
 
@@ -284,7 +282,60 @@ textarea:focus {
 
 .fila-campos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+}
+
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--espacio-m);
-    align-items: end
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+    main {
+        padding: var(--espacio-m);
+    }
+
+    .barra {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #menu {
+        justify-content: flex-start;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .portada {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .galeria-rutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .fila-campos {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--espacio-m);
+        align-items: end;
+    }
+
+    th,
+    td {
+        padding: var(--espacio-s) var(--espacio-m);
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .reservas {
+        grid-template-columns: 2fr 1fr;
+    }
 }
