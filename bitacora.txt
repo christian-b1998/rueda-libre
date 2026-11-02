@@ -387,3 +387,14 @@ FLOTA CON BOOTSTRAP VS CSS PROPIO
 - CSS propio frente a clases: mi versión usa 2 reglas con 11 líneas (7 declaraciones) y ningún @media para distribuir la flota; la versión con Bootstrap tiene 0 líneas de CSS de distribución y usa 7 clases distintas (container, row, g-3, col-12, col-sm-6, col-lg-4 y col-xl-3), que sumando las repeticiones en los siete article son 31 usos.
 - Lo que me dio Bootstrap sin esfuerzo: las columnas de 1, 2, 3 y 4 por fila en los puntos de corte sm, lg y xl sin escribir CSS ni media queries, la separación uniforme entre tarjetas con una sola clase (g-3) y el contenedor centrado con ancho máximo.
 - El control que perdí: ya no decido el ancho mínimo de las tarjetas ni se adaptan solas como con auto-fit, porque las columnas cambian solo en los puntos de corte fijos de Bootstrap; las tarjetas perdieron el borde, el relleno y las esquinas, y el botón «Reservar» ya no queda alineado al final de la tarjeta, porque eso dependía de mi CSS.
+
+SECCIÓN DE BENEFICIOS Y FRANJA CON UTILIDADES DE BOOTSTRAP
+
+Clases que encontré buscando en la documentación:
+1. text-bg-warning: pone fondo amarillo y elige solo un color de texto con buen contraste.
+2. flex-md-row: cambia la dirección del contenedor flex a fila desde el punto de corte md.
+3. d-none d-md-block: oculta el elemento y lo vuelve a mostrar desde md.
+4. gap-3: separa los elementos hijos de un contenedor flex o grid sin usar márgenes.
+5. text-body-emphasis: da el color de texto con más énfasis, para títulos.
+
+Nota: los colores de Bootstrap no coinciden exactamente con mi paleta; usé text-bg-success para Verde Ruta y text-bg-warning para Naranja Pedal.
