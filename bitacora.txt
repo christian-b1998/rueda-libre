@@ -415,3 +415,28 @@ Conflicto 3: tamaño de letra de los títulos
 Qué se vio en DevTools: los h1, h2 y h3 traían un font-size de Bootstrap con calc() y vw (a 1280 px, h2 de 2rem y h3 de 1.75rem), mucho más grande que el que tenía antes dentro de las tarjetas de la flota.
 Causa: la regla de Bootstrap tiene la misma especificidad que la mía, y como yo no definía font-size, se aplicaba el de Bootstrap.
 Solución: agregué en styles.css h1 de 2rem, h2 de 1.5rem y h3 de 1.17rem. Al cargarse después de Bootstrap, gana por orden de la cascada y los títulos recuperan su tamaño anterior sin usar !important.
+
+RUEDA LIBRE V2.0-BETA: COMPARATIVA FINAL
+
+Líneas de styles.css:
+- v1.5 (commit "MiniReto 4: responsive mobile-first y publicación v1.5"): 341 líneas.
+- v2.0-beta: 303 líneas.
+- Reducción: 38 líneas (11 %). Se eliminaron las reglas de distribución de inicio (portada, flota y rutas), tarifas (main) y reservas (.reservas, .fila-campos y el @media de 1200 px). Se mantuvieron las reglas de encabezado, menú y pie, porque la navbar llega en el MiniReto 9.
+
+Tiempo invertido:
+- v1.5 con CSS propio (MiniRetos 1 al 4): aprox. 6 horas (estimado con las horas de los commits).
+- v2.0-beta con Bootstrap (MiniRetos 5 al 8): aprox. 2 horas (estimado con las horas de los commits).
+
+Ventajas observadas:
+- Las columnas de la flota, las rutas, los beneficios, tarifas y reservas salen de clases (col-12, col-sm-6, col-md-8, col-lg-4...) sin escribir media queries; en el CSS propio cada cambio de columnas era una regla con su @media.
+- La separación entre columnas se resuelve con una sola clase (g-3, g-4).
+- Las utilidades (d-flex, text-center, fs-5, d-none d-md-block...) permitieron construir beneficios y franja sin crear clases nuevas.
+
+Desventajas observadas:
+- Al cargar Bootstrap, su reboot cambió elementos que ya tenía resueltos: el fieldset perdió el borde, el legend quedó flotante y más grande, el caption de las tablas pasó abajo, los th quedaron alineados a la izquierda y los bordes de las tablas se colapsaron. Tuve que agregar reglas en styles.css para recuperar el aspecto de la v1.5.
+- Los puntos de corte son fijos (576, 768, 992 y 1200 px), así que las tarjetas ya no se adaptan solas como con auto-fit y minmax.
+- Los colores de Bootstrap no coinciden con mi paleta; para usarlos sin !important tuve que redefinir variables --bs-* en :root.
+- El HTML quedó con más clases y más contenedores (row y col-*).
+
+Conclusión:
+Bootstrap me tomó aprox. 2 horas frente a aprox. 6 de la v1.5, y redujo 38 líneas de CSS. Bootstrap redujo 38 líneas de CSS y quitó todas las media queries de distribución, pero parte del trabajo se movió a pelear con su reboot y a ajustar variables. Con el sitio ya migrado, usarlo conviene para distribuir y para construir secciones nuevas rápido, siempre que styles.css cargue después de Bootstrap para conservar la identidad de la marca.
