@@ -380,3 +380,10 @@ Problemas responsive encontrados y cómo los resolví:
 3. Los campos del formulario quedaban muy angostos en el celular por el espacio lateral acumulado (margen del body, padding de main y relleno del fieldset). Reduje el padding de main en móvil a 0.5rem y lo restauré a 1rem desde 768 px.
 4. El contenido y el botón de enviar quedaban muy pegados al pie. Agregué padding-top al footer.
 5. En el celular, documento y celular quedaban con el doble de separación que los demás campos porque se sumaban el gap de la cuadrícula y el margen de cada grupo. Moví el gap al @media de 768 px, donde sí hay dos columnas.
+
+FLOTA CON BOOTSTRAP VS CSS PROPIO
+
+- Tiempo invertido: 5 minutos en reconstruir la distribución de la flota con la grilla de Bootstrap.
+- CSS propio frente a clases: mi versión usa 2 reglas con 11 líneas (7 declaraciones) y ningún @media para distribuir la flota; la versión con Bootstrap tiene 0 líneas de CSS de distribución y usa 7 clases distintas (container, row, g-3, col-12, col-sm-6, col-lg-4 y col-xl-3), que sumando las repeticiones en los siete article son 31 usos.
+- Lo que me dio Bootstrap sin esfuerzo: las columnas de 1, 2, 3 y 4 por fila en los puntos de corte sm, lg y xl sin escribir CSS ni media queries, la separación uniforme entre tarjetas con una sola clase (g-3) y el contenedor centrado con ancho máximo.
+- El control que perdí: ya no decido el ancho mínimo de las tarjetas ni se adaptan solas como con auto-fit, porque las columnas cambian solo en los puntos de corte fijos de Bootstrap; las tarjetas perdieron el borde, el relleno y las esquinas, y el botón «Reservar» ya no queda alineado al final de la tarjeta, porque eso dependía de mi CSS.
