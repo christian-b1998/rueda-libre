@@ -15,6 +15,23 @@
     --espacio-s: 0.5rem;
     --espacio-m: 1rem;
     --espacio-l: 2rem;
+
+    /* Puente con Bootstrap: sus utilidades leen estas variables, así que
+       se adaptan a la marca sin usar !important (se carga después de bootstrap.css) */
+    --bs-body-font-family: var(--fuente-texto);
+    --bs-body-color: #14213D;
+    --bs-body-color-rgb: 20, 33, 61;
+    --bs-body-bg: #FAF6EF;
+    --bs-body-bg-rgb: 250, 246, 239;
+    --bs-emphasis-color: #14213D;
+    --bs-emphasis-color-rgb: 20, 33, 61;
+    --bs-secondary-rgb: 91, 100, 112;
+    --bs-success-rgb: 30, 122, 79;
+    --bs-warning-rgb: 243, 154, 43;
+    --bs-link-color: #1E7A4F;
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color: #14213D;
+    --bs-link-hover-color-rgb: 20, 33, 61;
 }
 
 /* Base */
@@ -26,6 +43,7 @@
 }
 
 body {
+    margin: var(--espacio-s); /* Bootstrap lo pone en 0 */
     font-family: var(--fuente-texto);
     color: var(--color-titulosyencabezado);
     background-color: var(--color-fondogeneral);
@@ -37,26 +55,22 @@ h3 {
     font-family: var(--fuente-titulos);
 }
 
+/* Bootstrap agranda los títulos con calc() y vw; se recuperan los tamaños de la v1.5 */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.17rem; }
+
 img {
     max-width: 100%;
     height: auto;
 }
 
+/* USADO POR tarifas y reservas. En inicio, main.container hace que .container
+   gane (una clase pesa más que una etiqueta) en max-width, margin y padding lateral */
 main {
     max-width: 60rem;
     margin: 0 auto;
     padding: var(--espacio-s);
-}
-
-.portada {
-    display: grid;
-    gap: var(--espacio-l);
-}
-
-.portada img {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 footer {
@@ -70,16 +84,6 @@ footer {
 footer h3,
 footer p {
     margin-top: 0;
-}
-
-img {
-    max-width: 100%;
-    height: auto
-}
-
-.portada {
-    display: grid;
-    gap: var(--espacio-l);
 }
 
 /* Navegación */
@@ -134,6 +138,7 @@ img {
 
 /* Componentes */
 
+/* .boton-cta: inicio y tarifas · #submitForm: USADO POR reservas */
 .boton-cta,
 #submitForm {
     background-color: var(--color-botonesyenlaces);
@@ -172,6 +177,7 @@ article img {
     height: auto;
 }
 
+/* USADO POR tarifas */
 table {
     width: 100%;
     margin-bottom: var(--espacio-l);
@@ -221,38 +227,13 @@ thead th {
     color: var(--color-titulosyencabezado);
 }
 
-.articulos-flota {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: var(--espacio-m);
-}
-
-.articulos-flota article {
-    margin-bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-.articulos-flota .boton-cta {
-    text-align: center;
-}
-
-.galeria-rutas {
-    display: grid;
-    gap: var(--espacio-m);
-}
-
-.galeria-rutas article {
-    margin-bottom: 0;
-}
-
+/* USADO POR reservas */
 .reservas {
     display: grid;
     gap: var(--espacio-l);
 }
 
-/* Formularios */
+/* Formularios: USADO POR reservas */
 
 fieldset {
     margin-bottom: var(--espacio-l);
@@ -290,7 +271,7 @@ textarea:focus {
     gap: var(--espacio-m);
 }
 
-/* Responsive */
+/* Responsive (la grilla de inicio la resuelve Bootstrap, aquí no hay media queries de inicio) */
 
 @media (min-width: 768px) {
     main {
@@ -312,21 +293,14 @@ textarea:focus {
         align-items: flex-start;
     }
 
-    .portada {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-    }
-
-    .galeria-rutas {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
+    /* USADO POR reservas */
     .fila-campos {
         grid-template-columns: 1fr 1fr;
         gap: var(--espacio-m);
         align-items: end;
     }
 
+    /* USADO POR tarifas */
     th,
     td {
         padding: var(--espacio-s) var(--espacio-m);
@@ -335,6 +309,7 @@ textarea:focus {
 }
 
 @media (min-width: 1200px) {
+    /* USADO POR reservas */
     .reservas {
         grid-template-columns: 2fr 1fr;
     }
