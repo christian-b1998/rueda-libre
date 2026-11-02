@@ -398,3 +398,20 @@ Clases que encontré buscando en la documentación:
 5. text-body-emphasis: da el color de texto con más énfasis, para títulos.
 
 Nota: los colores de Bootstrap no coinciden exactamente con mi paleta; usé text-bg-success para Verde Ruta y text-bg-warning para Naranja Pedal.
+
+MINIRETO 7: CONFLICTOS ENTRE MIS ESTILOS Y LOS DE BOOTSTRAP
+
+Conflicto 1: colores de marca en las utilidades (text-bg-success y text-bg-warning)
+Qué se vio en DevTools: la franja salía en verde #198754 y las etiquetas en amarillo #ffc107, no en Verde Ruta ni Naranja Pedal, y el color de texto de text-bg-warning era negro con !important en la regla de Bootstrap.
+Causa: las utilidades de Bootstrap llevan !important, así que una regla normal mía no las puede pisar, pero sus colores salen de variables (--bs-success-rgb, --bs-warning-rgb, --bs-body-color-rgb).
+Solución: sin !important, redefiní esas variables en :root de styles.css, que se carga después de Bootstrap, con Verde Ruta, Naranja Pedal y Azul Noche. Las etiquetas pasaron de text-bg-warning a bg-warning text-body para que el texto sea Azul Noche sobre naranja y no negro.
+
+Conflicto 2: color de los enlaces
+Qué se vio en DevTools: los enlaces del contenido, como "Ver tarifas", salían en el azul #0d6efd de la regla a de Bootstrap, porque mi hoja solo definía color para "#menu a" y ".boton-cta".
+Causa: Bootstrap pinta todos los enlaces con la variable --bs-link-color-rgb y mi hoja no tenía una regla general para enlaces.
+Solución: redefiní --bs-link-color-rgb y --bs-link-hover-color-rgb en :root con Verde Ruta y Azul Noche. Los enlaces con color propio ("#menu a" y ".boton-cta") no cambiaron, porque su selector pesa más que a.
+
+Conflicto 3: tamaño de letra de los títulos
+Qué se vio en DevTools: los h1, h2 y h3 traían un font-size de Bootstrap con calc() y vw (a 1280 px, h2 de 2rem y h3 de 1.75rem), mucho más grande que el que tenía antes dentro de las tarjetas de la flota.
+Causa: la regla de Bootstrap tiene la misma especificidad que la mía, y como yo no definía font-size, se aplicaba el de Bootstrap.
+Solución: agregué en styles.css h1 de 2rem, h2 de 1.5rem y h3 de 1.17rem. Al cargarse después de Bootstrap, gana por orden de la cascada y los títulos recuperan su tamaño anterior sin usar !important.
