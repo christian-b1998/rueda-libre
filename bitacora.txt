@@ -440,3 +440,11 @@ Desventajas observadas:
 
 Conclusión:
 Bootstrap me tomó aprox. 2 horas frente a aprox. 6 de la v1.5, y redujo 38 líneas de CSS. Bootstrap redujo 38 líneas de CSS y quitó todas las media queries de distribución, pero parte del trabajo se movió a pelear con su reboot y a ajustar variables. Con el sitio ya migrado, usarlo conviene para distribuir y para construir secciones nuevas rápido, siempre que styles.css cargue después de Bootstrap para conservar la identidad de la marca.
+
+BOTÓN: BOOTSTRAP (SEMANA 2) VS TAILWIND (HOY)
+
+Bootstrap, semana 2: construí el botón "Reserva tu bicicleta" como un enlace <a> con clases de utilidades de Bootstrap: d-inline-block, bg-warning, text-body, fw-bold, text-decoration-none, px-4 py-2. El color de fondo (bg-warning) venía de la paleta de Bootstrap, adaptada a los colores de mi marca con las variables de mi CSS, y el borde redondeado y el efecto hover no los definí.
+
+Tailwind, hoy: construí el botón "Inscríbete" como un enlace <a> con: inline-block px-6 py-3 bg-amber-400 text-slate-900 font-semibold rounded-lg hover:bg-amber-300. Aquí decidí cada detalle: el padding, el color de fondo y de texto, el grosor, las esquinas redondeadas y el cambio de color al pasar el mouse.
+
+Diferencia clave: Bootstrap es un framework de componentes, trae piezas ya diseñadas (como btn y btn-warning) con su propio estilo, y yo las uso y las ajusto. Tailwind es utility-first: no trae ningún componente, solo utilidades pequeñas, y el botón lo armo yo combinándolas directamente en el HTML, sin escribir CSS aparte.
