@@ -448,3 +448,9 @@ Bootstrap, semana 2: construí el botón "Reserva tu bicicleta" como un enlace <
 Tailwind, hoy: construí el botón "Inscríbete" como un enlace <a> con: inline-block px-6 py-3 bg-amber-400 text-slate-900 font-semibold rounded-lg hover:bg-amber-300. Aquí decidí cada detalle: el padding, el color de fondo y de texto, el grosor, las esquinas redondeadas y el cambio de color al pasar el mouse.
 
 Diferencia clave: Bootstrap es un framework de componentes, trae piezas ya diseñadas (como btn y btn-warning) con su propio estilo, y yo las uso y las ajusto. Tailwind es utility-first: no trae ningún componente, solo utilidades pequeñas, y el botón lo armo yo combinándolas directamente en el HTML, sin escribir CSS aparte.
+
+CLASES EN OUTPUT.CSS: UNA QUE USO Y UNA QUE NO
+
+Busqué en src/output.css la clase .bg-indigo-900, que uso en el <body> de index.html, y sí aparece con su regla de CSS. Busqué .bg-pink-500, que no uso en ningún lado, y no aparece. Después agregué bg-pink-500 a un elemento de index.html, guardé, y entonces sí apareció en output.css.
+
+Esto pasa porque la CLI de Tailwind no incluye todas las clases de la paleta. Con --watch, cada vez que guardo, revisa los archivos HTML del proyecto, busca los nombres de clases que escribí y genera en output.css solo el CSS de esas. Si una clase no está escrita en mis archivos, no se genera. Por eso output.css es pequeño y solo contiene lo que uso.
