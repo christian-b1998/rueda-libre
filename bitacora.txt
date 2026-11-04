@@ -475,3 +475,8 @@ Colores:
 - Ámbar para acento y acción: bg-amber-400, text-amber-400, border-amber-400 y focus:ring-amber-400.
 - Slate para texto secundario: text-slate-300 y placeholder:text-slate-400.
 - Estados: etiquetas de nivel con bg-green-700, bg-amber-400 y bg-red-700; alertas con bg-sky-100, bg-green-100 y bg-amber-100, cada una con borde y texto del mismo color.
+
+MAQUETACIÓN DE LA LANDING (MiniReto 5)
+
+Decisión para los pasos de "¿Cómo funciona?":
+Usé grid (grid grid-cols-4 gap-6) en vez de flex. Los cuatro pasos son del mismo tipo y quiero que ocupen el mismo ancho y queden alineados, aunque un texto sea más largo que otro. Con grid, el ancho de cada columna lo define la cuadrícula; con flex habría que forzar anchos iguales con clases extra, porque cada paso se ajusta a su contenido. Reservé flex para el encabezado y el pie, donde sí me interesa repartir el espacio entre elementos de tamaños distintos.
