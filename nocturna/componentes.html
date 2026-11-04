@@ -5,52 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
     <title>Kit de componentes</title>
 </head>
 
-<body class="bg-indigo-900 text-white">
+<body class="bg-crema text-azul-noche font-texto dark:bg-azul-noche dark:text-white">
     <main class="p-8 max-w-2xl mx-auto space-y-12">
-        <h1 class="text-5xl font-bold">Kit de componentes Rueda Nocturna v0.1</h1>
+        <h1 class="font-titulos text-5xl font-bold">Kit de componentes Rueda Nocturna v0.1</h1>
         <section class="space-y-6">
-            <h2 class="text-3xl font-bold">Botones</h2>
+            <h2 class="font-titulos text-3xl font-bold">Botones</h2>
             <div class="flex flex-wrap gap-4">
-                <a class="inline-block px-6 py-3 bg-amber-400 text-slate-900 font-semibold rounded-lg shadow-md hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-900"
+                <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
                     href="#">Inscríbete</a>
-                <a class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-900"
+                <a class="inline-block px-6 py-3 bg-naranja-pedal text-azul-noche font-semibold rounded-lg shadow-md hover:bg-amarillo-farol focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-white dark:focus:ring-offset-azul-noche"
                     href="#">Ver rutas</a>
                 <button
-                    class="inline-block px-6 py-3 border-2 border-amber-400 text-amber-400 font-semibold rounded-lg hover:bg-amber-400 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-900"
+                    class="inline-block px-6 py-3 border-2 border-verde-ruta text-verde-ruta font-semibold rounded-lg hover:bg-verde-ruta hover:text-white focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus:ring-white dark:focus:ring-offset-azul-noche"
                     type="button">Más información</button>
             </div>
         </section>
 
         <section class="space-y-6">
-            <h2 class="text-3xl font-bold">Cards</h2>
+            <h2 class="font-titulos text-3xl font-bold">Cards</h2>
             <article
-                class="bg-indigo-800 border border-indigo-700 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl hover:border-amber-400">
+                class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl hover:border-verde-ruta dark:hover:border-amarillo-farol">
                 <img src="../img/lucesdelcentro.png"
                     alt="Cinco ciclistas con casco y luces pedalean de noche por una calle empedrada del centro, con casas adornadas con luces y una catedral iluminada al fondo"
                     class="w-full h-48 object-cover">
                 <div class="p-6 space-y-4">
                     <span
-                        class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-green-700 text-white">Fácil</span>
-                    <h3 class="text-2xl font-bold">Luces del Centro</h3>
+                        class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-verde-ruta text-white">Fácil</span>
+                    <h3 class="font-titulos text-2xl font-bold">Luces del Centro</h3>
                     <ul class="space-y-2">
                         <li class="flex justify-between">
-                            <span class="text-sm text-slate-300">Distancia</span>
-                            <span class="font-semibold text-white">10 km</span>
+                            <span class="text-sm text-gris-asfalto dark:text-crema/80">Distancia</span>
+                            <span class="font-semibold text-azul-noche dark:text-white">10 km</span>
                         </li>
                         <li class="flex justify-between">
-                            <span class="text-sm text-slate-300">Duración</span>
-                            <span class="font-semibold text-white">2 h</span>
+                            <span class="text-sm text-gris-asfalto dark:text-crema/80">Duración</span>
+                            <span class="font-semibold text-azul-noche dark:text-white">2 h</span>
                         </li>
                         <li class="flex justify-between">
-                            <span class="text-sm text-slate-300">Punto de encuentro</span>
-                            <span class="font-semibold text-white">Sede de Rueda Libre</span>
+                            <span class="text-sm text-gris-asfalto dark:text-crema/80">Punto de encuentro</span>
+                            <span class="font-semibold text-azul-noche dark:text-white">Sede de Rueda Libre</span>
                         </li>
                     </ul>
-                    <p class="text-3xl font-bold text-amber-400">$55.000</p>
-                    <a class="inline-block px-6 py-3 bg-amber-400 text-slate-900 font-semibold rounded-lg shadow-md hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-800"
+                    <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">$55.000</p>
+                    <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-white dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
                         href="#">Reservar esta ruta</a>
                 </div>
             </article>
@@ -58,37 +62,37 @@
 
 
         <section class="space-y-6">
-            <h2 class="text-3xl font-bold">Alertas</h2>
-            <div class="rounded-lg border-l-4 p-4 bg-sky-100 border-sky-600 text-sky-900">
+            <h2 class="font-titulos text-3xl font-bold">Alertas</h2>
+            <div class="rounded-lg border-l-4 p-4 bg-azul-noche/10 border-azul-noche text-azul-noche dark:bg-white/10 dark:border-crema dark:text-white">
                 <p class="font-semibold">Salidas de jueves a sábado</p>
                 <p class="text-sm">Las rutas nocturnas salen de jueves a sábado desde la sede de Rueda Libre.</p>
             </div>
-            <div class="rounded-lg border-l-4 p-4 bg-green-100 border-green-600 text-green-900" role="status">
+            <div class="rounded-lg border-l-4 p-4 bg-verde-ruta/10 border-verde-ruta text-azul-noche dark:bg-verde-ruta dark:border-white dark:text-white" role="status">
                 <p class="font-semibold">Reserva confirmada</p>
                 <p class="text-sm">Tu cupo quedó reservado. Te enviamos los detalles de la ruta a tu correo.</p>
             </div>
-            <div class="rounded-lg border-l-4 p-4 bg-amber-100 border-amber-500 text-amber-900">
+            <div class="rounded-lg border-l-4 p-4 bg-naranja-pedal/20 border-naranja-pedal text-azul-noche dark:bg-naranja-pedal dark:border-amarillo-farol dark:text-azul-noche">
                 <p class="font-semibold">Cupos limitados</p>
                 <p class="text-sm">Quedan pocos cupos para este jueves. Reserva pronto para no quedarte sin tu lugar.</p>
             </div>
         </section>
 
         <section class="space-y-6">
-            <h2 class="text-3xl font-bold">Campos de formulario</h2>
+            <h2 class="font-titulos text-3xl font-bold">Campos de formulario</h2>
             <form class="space-y-6">
                 <div class="space-y-2">
                     <label for="correo" class="block font-semibold">Correo electrónico</label>
                     <input id="correo" type="email" name="correo" placeholder="nombre@correo.com"
                         aria-describedby="correo-ayuda"
-                        class="block w-full rounded-lg border border-indigo-600 bg-indigo-800 px-4 py-3 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400">
-                    <p id="correo-ayuda" class="text-sm text-slate-300">Te enviaremos la confirmación aquí</p>
+                        class="block w-full rounded-lg border border-gris-asfalto bg-white px-4 py-3 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-verde-ruta dark:border-white/50 dark:bg-white/10 dark:text-white dark:placeholder:text-crema/70 dark:focus:ring-amarillo-farol dark:focus:border-amarillo-farol">
+                    <p id="correo-ayuda" class="text-sm text-gris-asfalto dark:text-crema/80">Te enviaremos la confirmación aquí</p>
                 </div>
                 <div class="space-y-2">
                     <label for="celular" class="block font-semibold">Celular</label>
                     <input id="celular" type="tel" name="celular" placeholder="3001234567"
                         aria-describedby="celular-ayuda"
-                        class="block w-full rounded-lg border border-indigo-600 bg-indigo-800 px-4 py-3 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400">
-                    <p id="celular-ayuda" class="text-sm text-slate-300">Solo números, sin espacios</p>
+                        class="block w-full rounded-lg border border-gris-asfalto bg-white px-4 py-3 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-verde-ruta dark:border-white/50 dark:bg-white/10 dark:text-white dark:placeholder:text-crema/70 dark:focus:ring-amarillo-farol dark:focus:border-amarillo-farol">
+                    <p id="celular-ayuda" class="text-sm text-gris-asfalto dark:text-crema/80">Solo números, sin espacios</p>
                 </div>
             </form>
         </section>
