@@ -480,3 +480,22 @@ MAQUETACIÓN DE LA LANDING (MiniReto 5)
 
 Decisión para los pasos de "¿Cómo funciona?":
 Usé grid (grid grid-cols-4 gap-6) en vez de flex. Los cuatro pasos son del mismo tipo y quiero que ocupen el mismo ancho y queden alineados, aunque un texto sea más largo que otro. Con grid, el ancho de cada columna lo define la cuadrícula; con flex habría que forzar anchos iguales con clases extra, porque cada paso se ajusta a su contenido. Reservé flex para el encabezado y el pie, donde sí me interesa repartir el espacio entre elementos de tamaños distintos.
+
+MINIRETO 6: LANDING RESPONSIVE
+
+Lo que se rompe a 360 px (antes de adaptar):
+- El encabezado en fila no cabe y se aprieta.
+- Hay scroll horizontal.
+- Las rutas quedan en tres columnas muy angostas.
+- Los pasos quedan en cuatro columnas muy angostas.
+- La franja de inscripción y el pie, en fila, quedan apretados.
+- El título principal es demasiado grande.
+
+Pruebas en modo dispositivo:
+
+| Ancho   | Encabezado                          | Rutas        | Pasos        | Franja y pie     | Scroll horizontal |
+|---------|-------------------------------------|--------------|--------------|------------------|-------------------|
+| 360 px  | Apilado, solo botón Inscríbete      | 1 columna    | 1 columna    | Apilados         | No                |
+| 768 px  | En fila, con enlaces                | 2 columnas   | 2 columnas   | En fila          | No                |
+| 1024 px | En fila, con enlaces                | 3 columnas   | 4 columnas   | En fila          | No                |
+| 1280 px | En fila, con enlaces                | 3 columnas   | 4 columnas   | En fila          | No                |
