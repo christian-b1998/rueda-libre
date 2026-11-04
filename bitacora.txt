@@ -439,7 +439,7 @@ Desventajas observadas:
 - El HTML quedó con más clases y más contenedores (row y col-*).
 
 Conclusión:
-Bootstrap me tomó aprox. 2 horas frente a aprox. 6 de la v1.5, y redujo 38 líneas de CSS. Bootstrap redujo 38 líneas de CSS y quitó todas las media queries de distribución, pero parte del trabajo se movió a pelear con su reboot y a ajustar variables. Con el sitio ya migrado, usarlo conviene para distribuir y para construir secciones nuevas rápido, siempre que styles.css cargue después de Bootstrap para conservar la identidad de la marca.
+Bootstrap me tomó aprox. 2 horas frente a aprox. 6 de la v1.5, y redujo 38 líneas de CSS. También quitó todas las media queries de distribución, pero parte del trabajo se movió a pelear con su reboot y a ajustar variables. Con el sitio ya migrado, usarlo conviene para distribuir y para construir secciones nuevas rápido, siempre que styles.css cargue después de Bootstrap para conservar la identidad de la marca.
 
 BOTÓN: BOOTSTRAP (SEMANA 2) VS TAILWIND (HOY)
 
@@ -454,3 +454,24 @@ CLASES EN OUTPUT.CSS: UNA QUE USO Y UNA QUE NO
 Busqué en src/output.css la clase .bg-indigo-900, que uso en el <body> de index.html, y sí aparece con su regla de CSS. Busqué .bg-pink-500, que no uso en ningún lado, y no aparece. Después agregué bg-pink-500 a un elemento de index.html, guardé, y entonces sí apareció en output.css.
 
 Esto pasa porque la CLI de Tailwind no incluye todas las clases de la paleta. Con --watch, cada vez que guardo, revisa los archivos HTML del proyecto, busca los nombres de clases que escribí y genera en output.css solo el CSS de esas. Si una clase no está escrita en mis archivos, no se genera. Por eso output.css es pequeño y solo contiene lo que uso.
+
+REGLAS DEL KIT (MiniReto 4)
+
+Radios de borde:
+- rounded-lg en botones, alertas y campos de formulario.
+- rounded-xl en la card.
+- rounded-full en las etiquetas de nivel.
+
+Escala de espaciado (múltiplos de 4 px de Tailwind):
+- Botones: px-6 py-3.
+- Campos de formulario: px-4 py-3.
+- Alertas: p-4.
+- Card: p-6 en el contenido.
+- Etiqueta de nivel: px-3 py-1.
+- Separación entre elementos: space-y-2, space-y-4, space-y-6 y gap-4.
+
+Colores:
+- Índigo para fondos y estructura: bg-indigo-900 (página), bg-indigo-800 (card y campos), border-indigo-700 y border-indigo-600.
+- Ámbar para acento y acción: bg-amber-400, text-amber-400, border-amber-400 y focus:ring-amber-400.
+- Slate para texto secundario: text-slate-300 y placeholder:text-slate-400.
+- Estados: etiquetas de nivel con bg-green-700, bg-amber-400 y bg-red-700; alertas con bg-sky-100, bg-green-100 y bg-amber-100, cada una con borde y texto del mismo color.
