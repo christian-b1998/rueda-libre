@@ -493,9 +493,12 @@ Lo que se rompe a 360 px (antes de adaptar):
 
 Pruebas en modo dispositivo:
 
-| Ancho   | Encabezado                          | Rutas        | Pasos        | Franja y pie     | Scroll horizontal |
-|---------|-------------------------------------|--------------|--------------|------------------|-------------------|
-| 360 px  | Apilado, solo botón Inscríbete      | 1 columna    | 1 columna    | Apilados         | No                |
-| 768 px  | En fila, con enlaces                | 2 columnas   | 2 columnas   | En fila          | No                |
-| 1024 px | En fila, con enlaces                | 3 columnas   | 4 columnas   | En fila          | No                |
-| 1280 px | En fila, con enlaces                | 3 columnas   | 4 columnas   | En fila          | No                |
++----------+--------------------------------+--------------+--------------+----------------+--------------------+
+| Ancho    | Encabezado                     | Rutas        | Pasos        | Franja y pie   | Scroll horizontal  |
++----------+--------------------------------+--------------+--------------+----------------+--------------------+
+| 360 px   | Apilado, solo botón Inscríbete | 1 columna    | 1 columna    | Apilados       | No                 |
+| 768 px   | En fila, con enlaces           | 2 columnas   | 2 columnas   | En fila        | No                 |
+| 1024 px  | En fila, con enlaces           | 3 columnas   | 4 columnas   | En fila        | No                 |
+| 1280 px  | En fila, con enlaces           | 3 columnas   | 4 columnas   | En fila        | No                 |
++----------+--------------------------------+--------------+--------------+----------------+--------------------+
+

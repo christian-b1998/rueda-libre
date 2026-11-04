@@ -12,9 +12,9 @@
     <title>Rueda Nocturna</title>
 </head>
 
-<body class="bg-crema text-azul-noche font-texto dark:bg-azul-noche dark:text-white">
-    <header class="border-b border-azul-noche/20 dark:border-white/20 py-4">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-4 md:flex-row md:justify-between">
+<body class="font-texto bg-crema text-azul-noche dark:bg-azul-noche dark:text-white">
+    <header class="py-4 border-b border-azul-noche/20 dark:border-white/20">
+        <div class="max-w-6xl flex flex-col items-center gap-4 md:flex-row md:justify-between mx-auto px-6">
             <img src="../img/logo.png" alt="Logo de Rueda Libre" class="h-10">
             <div class="flex items-center gap-8">
                 <nav class="hidden md:block">
@@ -24,7 +24,7 @@
                         <li><a href="#inscripcion" class="text-gris-asfalto hover:text-azul-noche dark:text-crema/80 dark:hover:text-white">Inscripción</a></li>
                     </ul>
                 </nav>
-                <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                <a class="btn-primario"
                     href="#inscripcion">Inscríbete</a>
             </div>
         </div>
@@ -35,19 +35,19 @@
             <div class="max-w-6xl mx-auto px-6 space-y-6">
                 <p class="text-sm uppercase tracking-widest font-semibold text-verde-ruta dark:text-amarillo-farol">Nuevo · Jueves a sábado</p>
                 <h1 class="font-titulos text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">Rueda Nocturna</h1>
-                <p class="text-lg text-gris-asfalto dark:text-crema/80 leading-relaxed">Descubre Medellín en bici cuando se encienden las
+                <p class="text-lg leading-relaxed text-gris-asfalto dark:text-crema/80">Descubre Medellín en bici cuando se encienden las
                     luces</p>
                 <ul class="space-y-2">
                     <li class="text-2xl font-semibold">3 rutas</li>
                     <li class="text-2xl font-semibold">Desde $55.000</li>
                 </ul>
                 <div class="flex flex-wrap gap-4">
-                    <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                    <a class="btn-primario"
                         href="#inscripcion">Inscríbete</a>
-                    <a class="inline-block px-6 py-3 bg-naranja-pedal text-azul-noche font-semibold rounded-lg shadow-md hover:bg-amarillo-farol focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                    <a class="btn-secundario"
                         href="#rutas">Ver rutas</a>
                     <button
-                        class="inline-block px-6 py-3 border-2 border-verde-ruta text-verde-ruta font-semibold rounded-lg hover:bg-verde-ruta hover:text-white focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                        class="btn-contorno"
                         type="button">Más información</button>
                 </div>
             </div>
@@ -58,13 +58,13 @@
                 <h2 class="font-titulos text-2xl font-bold md:text-3xl">Rutas</h2>
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     <article
-                        class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl hover:border-verde-ruta dark:hover:border-amarillo-farol">
+                        class="overflow-hidden bg-white border border-azul-noche/20 rounded-xl shadow-md transition-shadow hover:shadow-xl hover:border-verde-ruta dark:bg-white/10 dark:border-white/20 dark:hover:border-amarillo-farol">
                         <img src="../img/lucesdelcentro.png"
                             alt="Cinco ciclistas con casco y luces pedalean de noche por una calle empedrada del centro, con casas adornadas con luces y una catedral iluminada al fondo"
                             class="w-full h-48 object-cover">
                         <div class="p-6 space-y-4">
                             <span
-                                class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-verde-ruta text-white">Fácil</span>
+                                class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-verde-ruta text-white">Fácil</span>
                             <h3 class="font-titulos text-2xl font-bold">Luces del Centro</h3>
                             <ul class="space-y-2">
                                 <li class="flex justify-between">
@@ -81,18 +81,18 @@
                                 </li>
                             </ul>
                             <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">$55.000</p>
-                            <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-white dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                            <a class="btn-primario focus:ring-offset-white dark:focus:ring-offset-azul-noche"
                                 href="#">Reservar esta ruta</a>
                         </div>
                     </article>
                     <article
-                        class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl hover:border-verde-ruta dark:hover:border-amarillo-farol">
+                        class="overflow-hidden bg-white border border-azul-noche/20 rounded-xl shadow-md transition-shadow hover:shadow-xl hover:border-verde-ruta dark:bg-white/10 dark:border-white/20 dark:hover:border-amarillo-farol">
                         <img src="../img/miradoresdelaciudad.png"
                             alt="Cuatro ciclistas con luces pedalean al atardecer por una carretera con farolas hacia un mirador de madera, con la ciudad, las montañas y el teleférico al fondo"
                             class="w-full h-48 object-cover">
                         <div class="p-6 space-y-4">
                             <span
-                                class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-naranja-pedal text-azul-noche">Medio</span>
+                                class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-naranja-pedal text-azul-noche">Medio</span>
                             <h3 class="font-titulos text-2xl font-bold">Miradores de la Ciudad</h3>
                             <ul class="space-y-2">
                                 <li class="flex justify-between">
@@ -109,18 +109,18 @@
                                 </li>
                             </ul>
                             <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">$75.000</p>
-                            <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-white dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                            <a class="btn-primario focus:ring-offset-white dark:focus:ring-offset-azul-noche"
                                 href="#">Reservar esta ruta</a>
                         </div>
                     </article>
                     <article
-                        class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl hover:border-verde-ruta dark:hover:border-amarillo-farol">
+                        class="overflow-hidden bg-white border border-azul-noche/20 rounded-xl shadow-md transition-shadow hover:shadow-xl hover:border-verde-ruta dark:bg-white/10 dark:border-white/20 dark:hover:border-amarillo-farol">
                         <img src="../img/lunaenlaspalmas.png"
                             alt="Ciclistas con luces suben de noche por una carretera de montaña bajo la luna, con un arco con reloj, un mirador de madera y la ciudad iluminada al fondo"
                             class="w-full h-48 object-cover">
                         <div class="p-6 space-y-4">
                             <span
-                                class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-azul-noche text-white dark:bg-crema dark:text-azul-noche">Difícil</span>
+                                class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-azul-noche text-white dark:bg-crema dark:text-azul-noche">Difícil</span>
                             <h3 class="font-titulos text-2xl font-bold">Luna en Las Palmas</h3>
                             <ul class="space-y-2">
                                 <li class="flex justify-between">
@@ -137,7 +137,7 @@
                                 </li>
                             </ul>
                             <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">$95.000</p>
-                            <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-white dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                            <a class="btn-primario focus:ring-offset-white dark:focus:ring-offset-azul-noche"
                                 href="#">Reservar esta ruta</a>
                         </div>
                     </article>
@@ -149,22 +149,22 @@
             <div class="max-w-6xl mx-auto px-6 space-y-6">
                 <h2 class="font-titulos text-2xl font-bold md:text-3xl">¿Cómo funciona?</h2>
                 <ol class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    <li class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl p-6 space-y-4">
+                    <li class="p-6 space-y-4 bg-white border border-azul-noche/20 rounded-xl dark:bg-white/10 dark:border-white/20">
                         <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">1</p>
                         <h3 class="font-titulos text-xl font-bold">Elige tu ruta</h3>
                         <p class="text-sm text-gris-asfalto dark:text-crema/80">Escoge entre fácil, media o difícil, según tu ritmo.</p>
                     </li>
-                    <li class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl p-6 space-y-4">
+                    <li class="p-6 space-y-4 bg-white border border-azul-noche/20 rounded-xl dark:bg-white/10 dark:border-white/20">
                         <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">2</p>
                         <h3 class="font-titulos text-xl font-bold">Inscríbete</h3>
                         <p class="text-sm text-gris-asfalto dark:text-crema/80">Reserva tu cupo para la salida que prefieras.</p>
                     </li>
-                    <li class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl p-6 space-y-4">
+                    <li class="p-6 space-y-4 bg-white border border-azul-noche/20 rounded-xl dark:bg-white/10 dark:border-white/20">
                         <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">3</p>
                         <h3 class="font-titulos text-xl font-bold">Recoge tu equipo</h3>
                         <p class="text-sm text-gris-asfalto dark:text-crema/80">En la sede te entregamos bicicleta, casco, luces y chaleco.</p>
                     </li>
-                    <li class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl p-6 space-y-4">
+                    <li class="p-6 space-y-4 bg-white border border-azul-noche/20 rounded-xl dark:bg-white/10 dark:border-white/20">
                         <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">4</p>
                         <h3 class="font-titulos text-xl font-bold">Rueda</h3>
                         <p class="text-sm text-gris-asfalto dark:text-crema/80">Sal con tu guía y descubre Medellín de noche.</p>
@@ -176,20 +176,20 @@
         <section id="inscripcion" class="py-10 md:py-16">
             <div class="max-w-6xl mx-auto px-6">
                 <div
-                    class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl p-6 flex flex-col items-start gap-6 md:p-8 md:flex-row md:items-center md:justify-between">
+                    class="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between p-6 md:p-8 bg-white border border-azul-noche/20 rounded-xl dark:bg-white/10 dark:border-white/20">
                     <div class="space-y-2">
                         <h2 class="font-titulos text-2xl font-bold md:text-3xl">¿Listo para rodar de noche?</h2>
                         <p class="text-gris-asfalto dark:text-crema/80">Reserva tu cupo para las salidas de jueves a sábado.</p>
                     </div>
-                    <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-white dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                    <a class="btn-primario focus:ring-offset-white dark:focus:ring-offset-azul-noche"
                         href="#">Inscríbete</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-azul-noche/20 dark:border-white/20 py-8">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col gap-8 md:flex-row md:justify-between">
+    <footer class="py-8 border-t border-azul-noche/20 dark:border-white/20">
+        <div class="max-w-6xl flex flex-col gap-8 md:flex-row md:justify-between mx-auto px-6">
             <div class="space-y-4">
                 <img src="../img/logo.png" alt="Logo de Rueda Libre" class="h-8">
                 <p class="text-sm text-gris-asfalto dark:text-crema/80">Rueda Nocturna: descubre Medellín en bici cuando se encienden las
