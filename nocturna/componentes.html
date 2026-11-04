@@ -12,18 +12,18 @@
     <title>Kit de componentes</title>
 </head>
 
-<body class="bg-crema text-azul-noche font-texto dark:bg-azul-noche dark:text-white">
-    <main class="p-8 max-w-2xl mx-auto space-y-12">
+<body class="font-texto bg-crema text-azul-noche dark:bg-azul-noche dark:text-white">
+    <main class="max-w-2xl p-8 mx-auto space-y-12">
         <h1 class="font-titulos text-5xl font-bold">Kit de componentes Rueda Nocturna v0.1</h1>
         <section class="space-y-6">
             <h2 class="font-titulos text-3xl font-bold">Botones</h2>
             <div class="flex flex-wrap gap-4">
-                <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                <a class="btn-primario"
                     href="#">Inscríbete</a>
-                <a class="inline-block px-6 py-3 bg-naranja-pedal text-azul-noche font-semibold rounded-lg shadow-md hover:bg-amarillo-farol focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                <a class="btn-secundario"
                     href="#">Ver rutas</a>
                 <button
-                    class="inline-block px-6 py-3 border-2 border-verde-ruta text-verde-ruta font-semibold rounded-lg hover:bg-verde-ruta hover:text-white focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-crema dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                    class="btn-contorno"
                     type="button">Más información</button>
             </div>
         </section>
@@ -31,13 +31,13 @@
         <section class="space-y-6">
             <h2 class="font-titulos text-3xl font-bold">Cards</h2>
             <article
-                class="bg-white border border-azul-noche/20 dark:bg-white/10 dark:border-white/20 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl hover:border-verde-ruta dark:hover:border-amarillo-farol">
+                class="overflow-hidden bg-white border border-azul-noche/20 rounded-xl shadow-md transition-shadow hover:shadow-xl hover:border-verde-ruta dark:bg-white/10 dark:border-white/20 dark:hover:border-amarillo-farol">
                 <img src="../img/lucesdelcentro.png"
                     alt="Cinco ciclistas con casco y luces pedalean de noche por una calle empedrada del centro, con casas adornadas con luces y una catedral iluminada al fondo"
                     class="w-full h-48 object-cover">
                 <div class="p-6 space-y-4">
                     <span
-                        class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-verde-ruta text-white">Fácil</span>
+                        class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-verde-ruta text-white">Fácil</span>
                     <h3 class="font-titulos text-2xl font-bold">Luces del Centro</h3>
                     <ul class="space-y-2">
                         <li class="flex justify-between">
@@ -54,7 +54,7 @@
                         </li>
                     </ul>
                     <p class="text-3xl font-bold text-verde-ruta dark:text-amarillo-farol">$55.000</p>
-                    <a class="inline-block px-6 py-3 bg-verde-ruta text-white font-semibold rounded-lg shadow-md hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-azul-noche focus:ring-offset-2 focus:ring-offset-white dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-pedal dark:focus:ring-white dark:focus:ring-offset-azul-noche"
+                    <a class="btn-primario focus:ring-offset-white dark:focus:ring-offset-azul-noche"
                         href="#">Reservar esta ruta</a>
                 </div>
             </article>
@@ -63,15 +63,15 @@
 
         <section class="space-y-6">
             <h2 class="font-titulos text-3xl font-bold">Alertas</h2>
-            <div class="rounded-lg border-l-4 p-4 bg-azul-noche/10 border-azul-noche text-azul-noche dark:bg-white/10 dark:border-crema dark:text-white">
+            <div class="p-4 rounded-lg border-l-4 bg-azul-noche/10 border-azul-noche text-azul-noche dark:bg-white/10 dark:border-crema dark:text-white">
                 <p class="font-semibold">Salidas de jueves a sábado</p>
                 <p class="text-sm">Las rutas nocturnas salen de jueves a sábado desde la sede de Rueda Libre.</p>
             </div>
-            <div class="rounded-lg border-l-4 p-4 bg-verde-ruta/10 border-verde-ruta text-azul-noche dark:bg-verde-ruta dark:border-white dark:text-white" role="status">
+            <div class="p-4 rounded-lg border-l-4 bg-verde-ruta/10 border-verde-ruta text-azul-noche dark:bg-verde-ruta dark:border-white dark:text-white" role="status">
                 <p class="font-semibold">Reserva confirmada</p>
                 <p class="text-sm">Tu cupo quedó reservado. Te enviamos los detalles de la ruta a tu correo.</p>
             </div>
-            <div class="rounded-lg border-l-4 p-4 bg-naranja-pedal/20 border-naranja-pedal text-azul-noche dark:bg-naranja-pedal dark:border-amarillo-farol dark:text-azul-noche">
+            <div class="p-4 rounded-lg border-l-4 bg-naranja-pedal/20 border-naranja-pedal text-azul-noche dark:bg-naranja-pedal dark:border-amarillo-farol dark:text-azul-noche">
                 <p class="font-semibold">Cupos limitados</p>
                 <p class="text-sm">Quedan pocos cupos para este jueves. Reserva pronto para no quedarte sin tu lugar.</p>
             </div>
@@ -84,14 +84,14 @@
                     <label for="correo" class="block font-semibold">Correo electrónico</label>
                     <input id="correo" type="email" name="correo" placeholder="nombre@correo.com"
                         aria-describedby="correo-ayuda"
-                        class="block w-full rounded-lg border border-gris-asfalto bg-white px-4 py-3 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-verde-ruta dark:border-white/50 dark:bg-white/10 dark:text-white dark:placeholder:text-crema/70 dark:focus:ring-amarillo-farol dark:focus:border-amarillo-farol">
+                        class="block w-full px-4 py-3 rounded-lg border border-gris-asfalto bg-white text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-verde-ruta dark:border-white/50 dark:bg-white/10 dark:text-white dark:placeholder:text-crema/70 dark:focus:ring-amarillo-farol dark:focus:border-amarillo-farol">
                     <p id="correo-ayuda" class="text-sm text-gris-asfalto dark:text-crema/80">Te enviaremos la confirmación aquí</p>
                 </div>
                 <div class="space-y-2">
                     <label for="celular" class="block font-semibold">Celular</label>
                     <input id="celular" type="tel" name="celular" placeholder="3001234567"
                         aria-describedby="celular-ayuda"
-                        class="block w-full rounded-lg border border-gris-asfalto bg-white px-4 py-3 text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-verde-ruta dark:border-white/50 dark:bg-white/10 dark:text-white dark:placeholder:text-crema/70 dark:focus:ring-amarillo-farol dark:focus:border-amarillo-farol">
+                        class="block w-full px-4 py-3 rounded-lg border border-gris-asfalto bg-white text-azul-noche placeholder:text-gris-asfalto focus:outline-none focus:ring-2 focus:ring-verde-ruta focus:border-verde-ruta dark:border-white/50 dark:bg-white/10 dark:text-white dark:placeholder:text-crema/70 dark:focus:ring-amarillo-farol dark:focus:border-amarillo-farol">
                     <p id="celular-ayuda" class="text-sm text-gris-asfalto dark:text-crema/80">Solo números, sin espacios</p>
                 </div>
             </form>
