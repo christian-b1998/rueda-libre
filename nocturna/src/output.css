@@ -8,28 +8,6 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-700: oklch(50.5% 0.213 27.518);
-    --color-amber-100: oklch(96.2% 0.059 95.617);
-    --color-amber-300: oklch(87.9% 0.169 91.605);
-    --color-amber-400: oklch(82.8% 0.189 84.429);
-    --color-amber-500: oklch(76.9% 0.188 70.08);
-    --color-amber-900: oklch(41.4% 0.112 45.904);
-    --color-green-100: oklch(96.2% 0.044 156.743);
-    --color-green-600: oklch(62.7% 0.194 149.214);
-    --color-green-700: oklch(52.7% 0.154 150.069);
-    --color-green-900: oklch(39.3% 0.095 152.535);
-    --color-sky-100: oklch(95.1% 0.026 236.824);
-    --color-sky-600: oklch(58.8% 0.158 241.966);
-    --color-sky-900: oklch(39.1% 0.09 240.876);
-    --color-indigo-500: oklch(58.5% 0.233 277.117);
-    --color-indigo-600: oklch(51.1% 0.262 276.966);
-    --color-indigo-700: oklch(45.7% 0.24 277.023);
-    --color-indigo-800: oklch(39.8% 0.195 277.366);
-    --color-indigo-900: oklch(35.9% 0.144 278.697);
-    --color-slate-300: oklch(86.9% 0.022 252.894);
-    --color-slate-400: oklch(70.4% 0.04 256.788);
-    --color-slate-900: oklch(20.8% 0.042 265.755);
-    --color-white: #fff;
     --spacing: 0.25rem;
     --container-2xl: 42rem;
     --container-6xl: 72rem;
@@ -62,6 +40,15 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-verde-ruta: #1E7A4F;
+    --color-naranja-pedal: #F39A2B;
+    --color-azul-noche: #14213D;
+    --color-crema: #FAF6EF;
+    --color-gris-asfalto: #5B6470;
+    --color-amarillo-farol: #FFD166;
+    --color-white: #FFFFFF;
+    --font-titulos: "Montserrat", sans-serif;
+    --font-texto: "Open Sans", sans-serif;
   }
 }
 @layer base {
@@ -261,12 +248,6 @@
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  .grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -343,50 +324,56 @@
     border-left-style: var(--tw-border-style);
     border-left-width: 4px;
   }
-  .border-amber-400 {
-    border-color: var(--color-amber-400);
+  .border-azul-noche {
+    border-color: var(--color-azul-noche);
   }
-  .border-amber-500 {
-    border-color: var(--color-amber-500);
+  .border-azul-noche\/20 {
+    border-color: color-mix(in srgb, #14213D 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-azul-noche) 20%, transparent);
+    }
   }
-  .border-green-600 {
-    border-color: var(--color-green-600);
+  .border-gris-asfalto {
+    border-color: var(--color-gris-asfalto);
   }
-  .border-indigo-600 {
-    border-color: var(--color-indigo-600);
+  .border-naranja-pedal {
+    border-color: var(--color-naranja-pedal);
   }
-  .border-indigo-700 {
-    border-color: var(--color-indigo-700);
+  .border-verde-ruta {
+    border-color: var(--color-verde-ruta);
   }
-  .border-sky-600 {
-    border-color: var(--color-sky-600);
+  .bg-azul-noche {
+    background-color: var(--color-azul-noche);
   }
-  .bg-amber-100 {
-    background-color: var(--color-amber-100);
+  .bg-azul-noche\/10 {
+    background-color: color-mix(in srgb, #14213D 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-azul-noche) 10%, transparent);
+    }
   }
-  .bg-amber-400 {
-    background-color: var(--color-amber-400);
+  .bg-crema {
+    background-color: var(--color-crema);
   }
-  .bg-green-100 {
-    background-color: var(--color-green-100);
+  .bg-naranja-pedal {
+    background-color: var(--color-naranja-pedal);
   }
-  .bg-green-700 {
-    background-color: var(--color-green-700);
+  .bg-naranja-pedal\/20 {
+    background-color: color-mix(in srgb, #F39A2B 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-naranja-pedal) 20%, transparent);
+    }
   }
-  .bg-indigo-600 {
-    background-color: var(--color-indigo-600);
+  .bg-verde-ruta {
+    background-color: var(--color-verde-ruta);
   }
-  .bg-indigo-800 {
-    background-color: var(--color-indigo-800);
+  .bg-verde-ruta\/10 {
+    background-color: color-mix(in srgb, #1E7A4F 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-verde-ruta) 10%, transparent);
+    }
   }
-  .bg-indigo-900 {
-    background-color: var(--color-indigo-900);
-  }
-  .bg-red-700 {
-    background-color: var(--color-red-700);
-  }
-  .bg-sky-100 {
-    background-color: var(--color-sky-100);
+  .bg-white {
+    background-color: var(--color-white);
   }
   .object-cover {
     object-fit: cover;
@@ -424,8 +411,11 @@
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
-  .py-16 {
-    padding-block: calc(var(--spacing) * 16);
+  .font-texto {
+    font-family: var(--font-texto);
+  }
+  .font-titulos {
+    font-family: var(--font-titulos);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -479,23 +469,14 @@
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
   }
-  .text-amber-400 {
-    color: var(--color-amber-400);
+  .text-azul-noche {
+    color: var(--color-azul-noche);
   }
-  .text-amber-900 {
-    color: var(--color-amber-900);
+  .text-gris-asfalto {
+    color: var(--color-gris-asfalto);
   }
-  .text-green-900 {
-    color: var(--color-green-900);
-  }
-  .text-sky-900 {
-    color: var(--color-sky-900);
-  }
-  .text-slate-300 {
-    color: var(--color-slate-300);
-  }
-  .text-slate-900 {
-    color: var(--color-slate-900);
+  .text-verde-ruta {
+    color: var(--color-verde-ruta);
   }
   .text-white {
     color: var(--color-white);
@@ -519,24 +500,24 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
-  .placeholder\:text-slate-400::placeholder {
-    color: var(--color-slate-400);
+  .placeholder\:text-gris-asfalto::placeholder {
+    color: var(--color-gris-asfalto);
   }
   @media (hover: hover) {
-    .hover\:border-amber-400:hover {
-      border-color: var(--color-amber-400);
+    .hover\:border-verde-ruta:hover {
+      border-color: var(--color-verde-ruta);
     }
-    .hover\:bg-amber-300:hover {
-      background-color: var(--color-amber-300);
+    .hover\:bg-amarillo-farol:hover {
+      background-color: var(--color-amarillo-farol);
     }
-    .hover\:bg-amber-400:hover {
-      background-color: var(--color-amber-400);
+    .hover\:bg-azul-noche:hover {
+      background-color: var(--color-azul-noche);
     }
-    .hover\:bg-indigo-500:hover {
-      background-color: var(--color-indigo-500);
+    .hover\:bg-verde-ruta:hover {
+      background-color: var(--color-verde-ruta);
     }
-    .hover\:text-slate-900:hover {
-      color: var(--color-slate-900);
+    .hover\:text-azul-noche:hover {
+      color: var(--color-azul-noche);
     }
     .hover\:text-white:hover {
       color: var(--color-white);
@@ -546,15 +527,18 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
-  .focus\:border-amber-400:focus {
-    border-color: var(--color-amber-400);
+  .focus\:border-verde-ruta:focus {
+    border-color: var(--color-verde-ruta);
   }
   .focus\:ring-2:focus {
     --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .focus\:ring-amber-400:focus {
-    --tw-ring-color: var(--color-amber-400);
+  .focus\:ring-azul-noche:focus {
+    --tw-ring-color: var(--color-azul-noche);
+  }
+  .focus\:ring-verde-ruta:focus {
+    --tw-ring-color: var(--color-verde-ruta);
   }
   .focus\:ring-white:focus {
     --tw-ring-color: var(--color-white);
@@ -563,11 +547,11 @@
     --tw-ring-offset-width: 2px;
     --tw-ring-offset-shadow: var(--tw-ring-inset, ) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   }
-  .focus\:ring-offset-indigo-800:focus {
-    --tw-ring-offset-color: var(--color-indigo-800);
+  .focus\:ring-offset-crema:focus {
+    --tw-ring-offset-color: var(--color-crema);
   }
-  .focus\:ring-offset-indigo-900:focus {
-    --tw-ring-offset-color: var(--color-indigo-900);
+  .focus\:ring-offset-white:focus {
+    --tw-ring-offset-color: var(--color-white);
   }
   .focus\:outline-none:focus {
     --tw-outline-style: none;
@@ -616,6 +600,108 @@
     .lg\:text-6xl {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .dark\:border-amarillo-farol {
+      border-color: var(--color-amarillo-farol);
+    }
+    .dark\:border-crema {
+      border-color: var(--color-crema);
+    }
+    .dark\:border-white {
+      border-color: var(--color-white);
+    }
+    .dark\:border-white\/20 {
+      border-color: color-mix(in srgb, #FFFFFF 20%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:border-white\/20 {
+        border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+      }
+    }
+    .dark\:border-white\/50 {
+      border-color: color-mix(in srgb, #FFFFFF 50%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:border-white\/50 {
+        border-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+      }
+    }
+    .dark\:bg-amarillo-farol {
+      background-color: var(--color-amarillo-farol);
+    }
+    .dark\:bg-azul-noche {
+      background-color: var(--color-azul-noche);
+    }
+    .dark\:bg-crema {
+      background-color: var(--color-crema);
+    }
+    .dark\:bg-naranja-pedal {
+      background-color: var(--color-naranja-pedal);
+    }
+    .dark\:bg-verde-ruta {
+      background-color: var(--color-verde-ruta);
+    }
+    .dark\:bg-white\/10 {
+      background-color: color-mix(in srgb, #FFFFFF 10%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:bg-white\/10 {
+        background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+      }
+    }
+    .dark\:text-amarillo-farol {
+      color: var(--color-amarillo-farol);
+    }
+    .dark\:text-azul-noche {
+      color: var(--color-azul-noche);
+    }
+    .dark\:text-crema\/80 {
+      color: color-mix(in srgb, #FAF6EF 80%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:text-crema\/80 {
+        color: color-mix(in oklab, var(--color-crema) 80%, transparent);
+      }
+    }
+    .dark\:text-white {
+      color: var(--color-white);
+    }
+    .dark\:placeholder\:text-crema\/70::placeholder {
+      color: color-mix(in srgb, #FAF6EF 70%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-crema) 70%, transparent);
+      }
+    }
+    @media (hover: hover) {
+      .dark\:hover\:border-amarillo-farol:hover {
+        border-color: var(--color-amarillo-farol);
+      }
+      .dark\:hover\:bg-amarillo-farol:hover {
+        background-color: var(--color-amarillo-farol);
+      }
+      .dark\:hover\:bg-naranja-pedal:hover {
+        background-color: var(--color-naranja-pedal);
+      }
+      .dark\:hover\:text-azul-noche:hover {
+        color: var(--color-azul-noche);
+      }
+      .dark\:hover\:text-white:hover {
+        color: var(--color-white);
+      }
+    }
+    .dark\:focus\:border-amarillo-farol:focus {
+      border-color: var(--color-amarillo-farol);
+    }
+    .dark\:focus\:ring-amarillo-farol:focus {
+      --tw-ring-color: var(--color-amarillo-farol);
+    }
+    .dark\:focus\:ring-white:focus {
+      --tw-ring-color: var(--color-white);
+    }
+    .dark\:focus\:ring-offset-azul-noche:focus {
+      --tw-ring-offset-color: var(--color-azul-noche);
     }
   }
 }
