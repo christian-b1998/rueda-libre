@@ -19,20 +19,27 @@
 
 <body>
     <header>
-        <div class="barra">
-            <div class="marca">
-                <img src="../img/logo.png" alt="Logo de Rueda Libre" width="50">
-                <h1>Rueda Libre</h1>
+        <nav class="navbar navbar-expand-md" aria-label="Principal">
+            <div class="container">
+                <a class="navbar-brand marca" href="../index.html">
+                    <img src="../img/logo.png" alt="" width="50">
+                    <h1>Rueda Libre</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
+                    aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y rutas</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../nocturna/index.html">Rueda Nocturna</a></li>
+                    </ul>
+                </div>
             </div>
-            <nav id="navegacion-principal">
-                <ul id="menu">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="tarifas.html">Tarifas y rutas</a></li>
-                    <li><a href="reservas.html" class="activo">Reservas</a></li>
-                </ul>
-            </nav>
-        </div>
-        <h2>Reserva tu bicicleta</h2>
+        </nav>
+        <h2 class="container">Reserva tu bicicleta</h2>
     </header>
 
     <main class="container">

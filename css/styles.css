@@ -8,6 +8,7 @@
     --color-fondogeneral: #FAF6EF;
     --color-textosecundario: #5B6470;
     --color-blanco: #FFFFFF;
+    --color-amarillofarol: #FFD166; /* Color de la campaña Rueda Nocturna (mismo valor que --color-amarillo-farol de la landing) */
 
     --fuente-titulos: "Montserrat", sans-serif;
     --fuente-texto: "Open Sans", sans-serif;
@@ -65,14 +66,6 @@ img {
     height: auto;
 }
 
-/* USADO POR tarifas y reservas. En inicio, main.container hace que .container
-   gane (una clase pesa más que una etiqueta) en max-width, margin y padding lateral */
-main {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: var(--espacio-s);
-}
-
 footer {
     padding-top: var(--espacio-l);
     padding-bottom: 3.375rem;
@@ -88,18 +81,7 @@ footer p {
 
 /* Navegación */
 
-#menu a {
-    color: var(--color-textosecundario);
-    display: inline-block;
-    padding: var(--espacio-s) var(--espacio-m);
-}
 
-.barra {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--espacio-m);
-}
 
 .marca {
     display: flex;
@@ -111,30 +93,52 @@ footer p {
     margin: 0;
 }
 
-#menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--espacio-s);
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Navbar de Bootstrap con los colores de marca */
+.navbar {
+    --bs-navbar-color: var(--color-textosecundario);
+    --bs-navbar-hover-color: var(--color-titulosyencabezado);
+    --bs-navbar-active-color: var(--color-botonesyenlaces);
 }
 
-#menu .activo {
-    color: var(--color-botonesyenlaces);
+.navbar .navbar-nav .nav-link {
+    padding: var(--espacio-s) var(--espacio-m);
+}
+
+.navbar .navbar-nav .nav-link.active {
     font-weight: 600;
 }
 
-#menu a:hover {
+.navbar .navbar-nav .nav-link:hover {
     background-color: var(--color-destacadosybotonessecundarios);
     color: var(--color-titulosyencabezado);
 }
 
-#menu a:focus {
+.navbar .navbar-nav .nav-link:focus-visible {
     color: var(--color-titulosyencabezado);
     outline: 3px solid var(--color-botonesyenlaces);
 }
+
+/* Carrusel de inicio */
+.carousel-item img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    bottom: 2.5rem;
+    padding: var(--espacio-m);
+    background-color: var(--color-titulosyencabezado);
+    color: var(--color-blanco);
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+    margin-top: 0;
+}
+
+
+
+
 
 /* Componentes */
 
@@ -177,10 +181,23 @@ article img {
     height: auto;
 }
 
-/* USADO POR tarifas */
+/* USADO POR tarifas. Bootstrap (reboot) colapsa los bordes, manda el caption abajo
+   y alinea los th a la izquierda; se recupera el aspecto de la v1.5 */
 table {
     width: 100%;
     margin-bottom: var(--espacio-l);
+    border-collapse: separate;
+    caption-side: top;
+}
+
+caption {
+    padding: 0;
+    color: inherit;
+    text-align: center;
+}
+
+th {
+    text-align: center;
 }
 
 th,
@@ -227,17 +244,21 @@ thead th {
     color: var(--color-titulosyencabezado);
 }
 
-/* USADO POR reservas */
-.reservas {
-    display: grid;
-    gap: var(--espacio-l);
-}
-
 /* Formularios: USADO POR reservas */
 
+/* Bootstrap quita el borde del fieldset y vuelve flotante y grande el legend; se recupera lo nativo */
 fieldset {
     margin-bottom: var(--espacio-l);
     padding: var(--espacio-m);
+    border: 2px groove #c0c0c0;
+}
+
+legend {
+    float: none;
+    width: auto;
+    padding: 0 2px;
+    margin-bottom: 0;
+    font-size: 1rem;
 }
 
 .grupo {
@@ -261,30 +282,18 @@ textarea:focus {
     outline: 3px solid var(--color-botonesyenlaces);
 }
 
-.fila-campos {
-    display: grid;
-}
-
 .opciones {
     display: flex;
     flex-wrap: wrap;
     gap: var(--espacio-m);
 }
 
-/* Responsive (la grilla de inicio la resuelve Bootstrap, aquí no hay media queries de inicio) */
+/* Responsive (la distribución de las tres páginas la resuelve Bootstrap; aquí quedan encabezado, pie y tablas) */
 
 @media (min-width: 768px) {
-    main {
-        padding: var(--espacio-m);
-    }
-
-    .barra {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #menu {
-        justify-content: flex-start;
+    .carousel-item img {
+        aspect-ratio: 2 / 1;
+        max-height: 28rem;
     }
 
     footer {
@@ -293,24 +302,10 @@ textarea:focus {
         align-items: flex-start;
     }
 
-    /* USADO POR reservas */
-    .fila-campos {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--espacio-m);
-        align-items: end;
-    }
-
     /* USADO POR tarifas */
     th,
     td {
         padding: var(--espacio-s) var(--espacio-m);
         font-size: 1rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    /* USADO POR reservas */
-    .reservas {
-        grid-template-columns: 2fr 1fr;
     }
 }

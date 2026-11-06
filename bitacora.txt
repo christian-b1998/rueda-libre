@@ -420,8 +420,8 @@ RUEDA LIBRE V2.0-BETA: COMPARATIVA FINAL
 
 Líneas de styles.css:
 - v1.5 (commit "MiniReto 4: responsive mobile-first y publicación v1.5"): 341 líneas.
-- v2.0-beta: 303 líneas.
-- Reducción: 38 líneas (11 %). Se eliminaron las reglas de distribución de inicio (portada, flota y rutas), tarifas (main) y reservas (.reservas, .fila-campos y el @media de 1200 px). Se mantuvieron las reglas de encabezado, menú y pie, porque la navbar llega en el MiniReto 9.
+- v2.0-beta: 315 líneas.
+- Reducción: 26 líneas (8 %). Se eliminaron las reglas de distribución de la portada, la flota y las rutas de inicio.
 
 Tiempo invertido:
 - v1.5 con CSS propio (MiniRetos 1 al 4): aprox. 6 horas (estimado con las horas de los commits).
@@ -474,7 +474,7 @@ Colores:
 - Índigo para fondos y estructura: bg-indigo-900 (página), bg-indigo-800 (card y campos), border-indigo-700 y border-indigo-600.
 - Ámbar para acento y acción: bg-amber-400, text-amber-400, border-amber-400 y focus:ring-amber-400.
 - Slate para texto secundario: text-slate-300 y placeholder:text-slate-400.
-- Estados: etiquetas de nivel con bg-green-700, bg-amber-400 y bg-red-700; alertas con bg-sky-100, bg-green-100 y bg-amber-100, cada una con borde y texto del mismo color.
+- Estados: eetiquetas de nivel con bg-verde-ruta, bg-amarillo-farol y bg-rojo-dificil (el rojo es un color de estado añadido fuera de la paleta de marca), cada una con borde y texto del mismo color.
 
 MAQUETACIÓN DE LA LANDING (MiniReto 5)
 
@@ -502,3 +502,17 @@ Pruebas en modo dispositivo:
 | 1280 px  | En fila, con enlaces           | 3 columnas   | 4 columnas   | En fila        | No                 |
 +----------+--------------------------------+--------------+--------------+----------------+--------------------+
 
+CONTRARRELOJ 1: INSCRIPCIÓN A RUEDA NOCTURNA
+
+Tiempo real: aprox. 30 minutos (estimado, no lo cronometré). Dentro del límite de 40.
+Incluye regenerar el CSS, probar el formulario (vacío, con datos inválidos, completo y solo con teclado, en claro y oscuro, a 360 px y a 1280 px) y publicarlo.
+
+Pendiente: el formulario valida los datos y muestra el aviso de éxito, pero todavía no los guarda ni los envía a ningún lado (no hay servidor). Falta conectarlo a un servicio de recepción de formularios.
+
+CONTRARRELOJ 2: UN SOLO ECOSISTEMA
+
+Tiempo real: aprox. 35 minutos (estimado, no lo cronometré).
+
+CONTRARRELOJ 2: UN SOLO ECOSISTEMA
+
+Tiempo real: aprox. 40 minutos (estimado, no lo cronometré).
