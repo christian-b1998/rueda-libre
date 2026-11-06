@@ -18,19 +18,26 @@
 
 <body>
     <header>
-        <div class="barra">
-            <div class="marca">
-                <img src="img/logo.png" alt="Logo de Rueda Libre" width="50">
-                <h1>Rueda Libre</h1>
+        <nav class="navbar navbar-expand-md" aria-label="Principal">
+            <div class="container">
+                <a class="navbar-brand marca" href="index.html">
+                    <img src="img/logo.png" alt="" width="50">
+                    <h1>Rueda Libre</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
+                    aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir o cerrar el menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html">Tarifas y rutas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="paginas/reservas.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nocturna/index.html">Rueda Nocturna</a></li>
+                    </ul>
+                </div>
             </div>
-            <nav id="navegacion-principal">
-                <ul id="menu">
-                    <li><a href="index.html" class="activo">Inicio</a></li>
-                    <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
-                    <li><a href="paginas/reservas.html">Reservas</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
     <main class="container">
@@ -42,6 +49,63 @@
             <div class="col-12 col-md-6">
                 <img class="img-fluid" src="img/portada.png"
                     alt="Ciclista pedaleando entre montañas y edificios de Medellín. Texto de la imagen: Rueda Libre, alquiler de bicicletas en Medellín.">
+            </div>
+        </section>
+
+        <section aria-label="Destacados de Rueda Libre" class="my-5">
+            <div id="carrusel-destacados" class="carousel slide" aria-roledescription="carousel" aria-label="Destacados de Rueda Libre">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+                    <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+                    <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+                    <button type="button" data-bs-target="#carrusel-destacados" data-bs-slide-to="3" aria-label="Diapositiva 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 de 4">
+                        <img src="img/carrusel-rutas.png" class="d-block w-100"
+                            alt="Grupo de ciclistas recorriendo una carretera con curvas entre montañas verdes, con la ciudad y el cable aéreo al fondo.">
+                        <div class="carousel-caption">
+                            <h3>Recorridos guiados</h3>
+                            <p class="d-none d-md-block">Conoce Medellín sobre dos ruedas con un guía que te acompaña.</p>
+                            <a class="boton-cta" href="paginas/tarifas.html">Ver tarifas y rutas</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 de 4">
+                        <img src="img/carrusel-electricas.png" class="d-block w-100"
+                            alt="Ciclista con casco en una bicicleta eléctrica turquesa por una carretera de montaña, con Medellín y el cable aéreo al fondo.">
+                        <div class="carousel-caption">
+                            <h3>Bicicletas eléctricas</h3>
+                            <p class="d-none d-md-block">Para subidas y trayectos largos, con el motor de tu lado.</p>
+                            <a class="boton-cta" href="paginas/reservas.html">Reservar una bici</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 de 4">
+                        <img src="img/carrusel-rio-parques.png" class="d-block w-100"
+                            alt="Ilustración de un parque con un río, un puente de madera y una ciclorruta por donde pasan ciclistas, familias y corredores.">
+                        <div class="carousel-caption">
+                            <h3>Río y Parques</h3>
+                            <p class="d-none d-md-block">Una ruta de nivel fácil para pedalear en familia.</p>
+                            <a class="boton-cta" href="paginas/tarifas.html">Ver la ruta</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="4 de 4">
+                        <img src="img/carrusel-nocturna.png" class="d-block w-100"
+                            alt="Cinco ciclistas con casco y luces pedalean de noche por una calle empedrada del centro, con casas adornadas con luces y una catedral iluminada al fondo.">
+                        <div class="carousel-caption">
+                            <h3>Rueda Nocturna</h3>
+                            <p class="d-none d-md-block">Descubre Medellín en bici cuando se encienden las luces.</p>
+                            <a class="boton-cta" href="nocturna/index.html">Conoce la campaña</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-destacados" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusel-destacados" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
         </section>
 
