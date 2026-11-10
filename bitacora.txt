@@ -463,18 +463,21 @@ Radios de borde:
 - rounded-full en las etiquetas de nivel.
 
 Escala de espaciado (múltiplos de 4 px de Tailwind):
-- Botones: px-6 py-3.
+- Botones: px-6 py-3 (dentro de btn-primario, btn-secundario y btn-contorno desde el MiniReto 8).
 - Campos de formulario: px-4 py-3.
 - Alertas: p-4.
 - Card: p-6 en el contenido.
 - Etiqueta de nivel: px-3 py-1.
 - Separación entre elementos: space-y-2, space-y-4, space-y-6 y gap-4.
 
-Colores:
-- Índigo para fondos y estructura: bg-indigo-900 (página), bg-indigo-800 (card y campos), border-indigo-700 y border-indigo-600.
-- Ámbar para acento y acción: bg-amber-400, text-amber-400, border-amber-400 y focus:ring-amber-400.
-- Slate para texto secundario: text-slate-300 y placeholder:text-slate-400.
-- Estados: eetiquetas de nivel con bg-verde-ruta, bg-amarillo-farol y bg-rojo-dificil (el rojo es un color de estado añadido fuera de la paleta de marca), cada una con borde y texto del mismo color.
+Colores (colores de marca definidos en @theme desde el MiniReto 7):
+- Azul Noche para fondos y texto principal: text-azul-noche en modo claro y dark:bg-azul-noche como fondo en modo oscuro. Crema como fondo del modo claro: bg-crema.
+- Superficies (card, pasos, franja y campos): bg-white y border-azul-noche/20 en claro; dark:bg-white/10 y dark:border-white/20 en oscuro.
+- Verde Ruta para acción y acento en claro: bg-verde-ruta, text-verde-ruta, focus:ring-verde-ruta.
+- Naranja Pedal para botones secundarios: bg-naranja-pedal con text-azul-noche.
+- Amarillo Farol para acento y acción en oscuro: dark:bg-amarillo-farol, dark:text-amarillo-farol, dark:focus:ring-amarillo-farol.
+- Gris Asfalto para texto secundario: text-gris-asfalto y placeholder:text-gris-asfalto en claro, dark:text-crema/80 en oscuro.
+- Estados: etiquetas de nivel con bg-verde-ruta, bg-amarillo-farol y bg-rojo-dificil (el rojo es un color de estado añadido fuera de la paleta de marca); alertas con bg-azul-noche/10, bg-verde-ruta/10 y bg-naranja-pedal/20, cada una con borde del mismo color.
 
 MAQUETACIÓN DE LA LANDING (MiniReto 5)
 
@@ -513,6 +516,58 @@ CONTRARRELOJ 2: UN SOLO ECOSISTEMA
 
 Tiempo real: aprox. 35 minutos (estimado, no lo cronometré).
 
-CONTRARRELOJ 2: UN SOLO ECOSISTEMA
+VALIDACIÓN DE CONTRASTE EN MODO OSCURO (MiniReto 7)
 
-Tiempo real: aprox. 40 minutos (estimado, no lo cronometré).
+WCAG: 4.5:1 para texto normal y 3:1 para texto grande.
+Blanco sobre Azul Noche (texto principal): 15.97:1 → apta
+Crema al 80 % sobre Azul Noche (texto secundario): 9.86:1 → apta
+Crema al 80 % sobre la card oscura (texto secundario en card): 7.7:1 → apta
+Amarillo Farol sobre Azul Noche (acentos y precios): 11.07:1 → apta
+Azul Noche sobre Amarillo Farol (botón principal): 11.07:1 → apta
+Azul Noche sobre Naranja Pedal (botón secundario): 7.2:1 → apta
+Azul Noche sobre Crema (etiqueta Difícil): 14.82:1 → apta
+Blanco sobre Verde Ruta (etiqueta Fácil y alerta de éxito): 5.31:1 → apta
+Verde Ruta sobre Azul Noche: 3:1 → no apta para texto normal
+Corrección: en modo oscuro Verde Ruta no se usa como color de texto; solo como fondo con texto blanco. Los acentos y precios pasan a Amarillo Farol.
+
+MINIRETO 8: CÓDIGO LEGIBLE Y VEREDICTO BOOTSTRAP VS TAILWIND
+
+Clases que más se repetían en la landing:
+- Botón principal: 19 clases, 6 veces (encabezado, portada, tres cards y franja de inscripción).
+- Botón secundario: 16 clases, 1 vez. Botón de contorno: 21 clases, 1 vez.
+- Total en los 8 botones: 151 clases.
+- Card de ruta: 3 veces. Etiqueta de nivel: 3 veces. Campos de formulario: 2 veces en el kit.
+
+Refactor:
+- Creé tres clases con @apply en @layer components: btn-primario, btn-secundario y btn-contorno.
+- Los 8 botones de la landing pasaron de 151 clases a 16.
+- Las cards las dejé con el marcado del kit. Ordené las clases de cada elemento por categoría: layout, espaciado, tipografía, color y estados.
+
+Tamaños medidos:
+
++--------------------------------------------+-------------+--------------+
+| Recurso                                    | Transferido | Tamaño real  |
++--------------------------------------------+-------------+--------------+
+| output.css (Tailwind) en el disco, --minify| -           | 21.0 kB      |
+| output.css (Tailwind) en la página         | 4.3 kB      | 21.0 kB      |
+| bootstrap.min.css                          | 33.8 kB     | 232 kB       |
+| bootstrap.bundle.min.js                    | 25.2 kB     | 80.5 kB      |
+| popper.min.js y bootstrap.min.js           | no se cargan| no se cargan |
+| Total Bootstrap (CSS + JavaScript)         | 59.0 kB     | 312.5 kB     |
++--------------------------------------------+-------------+--------------+
+
+El archivo output.css minificado pesa 20.980 bytes en el disco. Bootstrap, entre CSS y JavaScript, pesa unas 15 veces más sin comprimir (312.5 kB frente a 21.0 kB).
+
+Comparativa:
+- Curva de aprendizaje: Bootstrap me dio resultados rápido con pocas clases (la flota en 5 minutos con la grilla). Con Tailwind necesité más tiempo para aprender los nombres de las utilidades y cómo se combinan (flex, items-*, justify-*, prefijos md: y dark:), y los botones llegaron a 19 clases.
+- Personalización: con Bootstrap tuve que sobrescribir variables --bs-* y resolver tres conflictos de cascada (MiniReto 7). Con Tailwind definí los colores y las fuentes de la marca una sola vez en @theme y las utilidades salieron del tema, sin conflictos.
+- Tamaño final: el CSS de Tailwind pesa 21.0 kB sin comprimir, y el CSS más el JavaScript de Bootstrap pesan 312.5 kB (232 kB + 80.5 kB), unas 15 veces más. Transferidos, Bootstrap suma 59.0 kB (33.8 kB + 25.2 kB) frente a 4.3 kB de Tailwind, unas 14 veces más.
+- Casos de uso: Bootstrap conviene cuando se necesitan componentes ya hechos (navbar, formularios, modales) y un aspecto uniforme con poco esfuerzo. Tailwind conviene cuando la identidad visual es propia, como la de Rueda Libre, y cuando hay modo oscuro o muchos ajustes por pantalla.
+
+Recomendación para Rueda Libre:
+Recomiendo Tailwind para la próxima versión del sitio completo. La marca tiene colores y fuentes propios que se definen una vez en @theme, el modo oscuro y el responsive salen con prefijos, y el CSS final es mucho más liviano que el de Bootstrap. Su costo es una curva de aprendizaje más larga y HTML con más clases, que se compensa con componentes como las clases de @apply y el marcado reutilizado del kit.
+
+CONTRARRELOJ 3: REQUERIMIENTO DE ÚLTIMA HORA
+
+Tiempo real: aprox. 30 minutos (estimado, no lo cronometré). Dentro del límite de 45.
+Pendiente: los botones "Elegir plan" llevan a la sección de inscripción, pero el formulario todavía no tiene un campo para el plan elegido.
