@@ -33,7 +33,8 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y rutas</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                href="reservas.html">Reservas</a></li>
                         <li class="nav-item"><a class="nav-link" href="../nocturna/index.html">Rueda Nocturna</a></li>
                     </ul>
                 </div>
@@ -47,7 +48,7 @@
             <section class="col-12 col-md-8">
                 <h2>Formulario de reserva</h2>
                 <p>Todos los campos son obligatorios, excepto los comentarios.</p>
-                <form action="/enviar" method="post">
+                <form id="formulario-reserva">
                     <fieldset>
                         <legend>Tus datos</legend>
                         <div class="grupo">
@@ -124,6 +125,7 @@
                                 required> Aceptación de las políticas de alquiler</label>
                     </fieldset>
                     <button type="submit" id="submitForm" name="submitForm">Enviar Reserva</button>
+                    <div id="resultado" role="status"></div>
                 </form>
             </section>
             <aside class="col-12 col-md-4">
@@ -176,6 +178,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('formulario-reserva').addEventListener('submit', function (evento) {
+            evento.preventDefault();
+            document.getElementById('resultado').innerHTML = '<p><strong>Reserva enviada.</strong> Te contactaremos pronto para confirmarla.</p>';
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>
