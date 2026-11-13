@@ -571,3 +571,17 @@ CONTRARRELOJ 3: REQUERIMIENTO DE ÚLTIMA HORA
 
 Tiempo real: aprox. 30 minutos (estimado, no lo cronometré). Dentro del límite de 45.
 Pendiente: los botones "Elegir plan" llevan a la sección de inscripción, pero el formulario todavía no tiene un campo para el plan elegido.
+
+LANZAMIENTO RUEDA NOCTURNA: ENTREGA Y DEMO
+
+Tiempos reales de los contrarrelojes:
+- Contrarreloj 1: aprox. 30 minutos (estimado).
+- Contrarreloj 2: aprox. 35 minutos (estimado).
+- Contrarreloj 3: aprox. 30 minutos (estimado).
+
+Demo:
+- Duración del ensayo: 2 min 34 s (máximo 3 minutos).
+- Ensayada con: Juan Tejada.
+- Retroalimentación recibida:
+  - Ir un poco más despacio: por los nervios o por el tiempo, dije todo muy rápido.
+  - Memorizar mejor dónde está cada cosa para la demo: me confundía al buscar y mostrar las cosas.
